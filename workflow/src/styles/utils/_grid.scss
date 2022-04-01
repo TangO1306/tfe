@@ -1,0 +1,31 @@
+.tabs{
+    display: grid;
+    grid-template-columns: repeat(9, 1fr);
+    grid-template-rows: auto auto auto;
+    padding: 192px 96px;
+}
+
+.instrument__list{
+    grid-column: 2/3;
+    grid-row: 1/4;
+}
+
+.tabs .title--medium{
+    grid-column: 4/6;
+    grid-row: 1/2;
+}
+
+.pagination{
+    grid-column: 8/9;
+    grid-row: 1/2;
+}
+
+.rover{
+    grid-column: 4/8;
+    grid-row: 2/3;
+}
+
+.p__instrument{
+    grid-column: 4/9;
+    grid-row: 3/4;
+}

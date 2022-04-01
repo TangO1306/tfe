@@ -1,5 +1,9 @@
-@import 'utils/variables';
-@import 'components/type';
+@import 'utils/animation';
+@import 'utils/grid';
+@import 'utils/title';
+@import 'utils/variable';
+@import 'components/header';
+@import 'components/footer';
 
 html{
     scroll-behavior: smooth;
@@ -22,8 +26,8 @@ html{
   }
   
   ::selection{
-    color: #FFF;
-    background: #D44421;
+    color: $white;
+    background: $orange;
     opacity: .2;
   }
   
@@ -32,7 +36,7 @@ html{
   }
   
   ::-webkit-scrollbar-thumb{
-    background: #D44421;
+    background: $darkgrey;
     border-radius: 5px;
   }
   
@@ -53,13 +57,13 @@ html{
     &-outer{
       width: 50px;
       height: 50px;
-      border: 3px solid #fff;
+      border: 3px solid $white;
     }
   
     &-inner{
       width: 7px;
       height: 7px;
-      background-color: #fff;
+      background-color: $white;
       transition: all .08s ease-out;
     }
   }
@@ -67,7 +71,7 @@ html{
   p:hover ~ .cursor-outer, h1:hover ~ .cursor-outer{
     width: 90px;
     height: 90px;
-    background-color: #fff;
+    background-color: $white;
     mix-blend-mode: difference;
     transition: all .1s ease-out;
   }
@@ -75,6 +79,10 @@ html{
   p:hover ~ .cursor-inner, h1:hover ~ .cursor-inner{
     opacity: 0;
   }*/
+
+  .list{
+    list-style: none;
+  }
   
   .contact{
     width: 200px;
@@ -90,7 +98,7 @@ html{
     position: absolute;
     width: 150px;
     height: 150px;
-    background: black;
+    background: $black;
     border-radius: 50%;
   }
   
@@ -113,7 +121,7 @@ html{
     height: 100vh;
     width: 100vw;
     z-index: 1000;
-    background-color: #080808;
+    background-color: $black;
     opacity: 1;
     animation: loader .5s 1.75s ease-out forwards;
     pointer-events: none;
@@ -121,7 +129,7 @@ html{
     justify-content: center;
     align-items: center;
     .logo{
-      color: #FFF;
+      color: $white;
       font-weight: bold;
       font-size: 3em;
       margin: auto;
@@ -130,7 +138,7 @@ html{
   }
   
   .line{
-    background-color: #141414;
+    background-color: $lightblack;
     position: fixed;
     width: 2px;
     height: 0vh;
@@ -158,8 +166,8 @@ html{
   .section{
     overflow: hidden;
     &--intro{
-      background-color: #080808;
-      color: #FFFFFF;
+      background-color: $black;
+      color: $white;
   
       .container{
         height: 100vh;
@@ -167,7 +175,7 @@ html{
     }
   
     &--content{
-      background-color: #FFFFFF;
+      background-color: $white;
     }
   }
   
@@ -220,7 +228,7 @@ html{
       position: absolute;
       bottom: 0;
       padding: 24px 48px;
-      color: #FFF;
+      color: $white;
       opacity: 0;
       transition: opacity .4s ease-out;
     }
@@ -230,62 +238,16 @@ html{
     display: flex;
     gap: 48px;
   }
-  
-  @keyframes line {
-    to{
-      height: 100vh;
-    }
-  }
-  
-  @keyframes loader {
-    to{
-      opacity: 0;
-    }
-  }
-  
-  .nav{
-    mix-blend-mode: difference;
-    position: fixed;
-    width: 100%;
-    z-index: 10;
-  }
-  
-  .menu{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin: 48 96px;
-  
-    &__list{
-      padding: 0;
-      margin: 0;
-      display: flex;
-      gap: 72px;
-    }
-  
-    &__element{
-      list-style: none;
-      
-      &--lien{
-        padding: 24px 0;
-        text-decoration: none;
-        text-transform: uppercase;
-        font-weight: 500;
-        letter-spacing: 2px;
-        color: #FFF;
-      }
-    }
-  }
-  
+
   /*.timeline{
-    background-color: #FFF;
+    background-color: $white;
     .horizontal{
       height: 100vh;
       width: 100vw;
     }
   
     .container::after{
-      background-color: #000;
+      background-color: $black;
       content: '';
       top: 50%;
       position: absolute;
@@ -299,7 +261,7 @@ html{
     position: absolute;
     height: 36px;
     width: 22px;
-    border: 2px solid #FFF;
+    border: 2px solid $white;
     margin: auto;
     left: 0;
     right: 0;
@@ -317,7 +279,7 @@ html{
     height: 8px;
     width: 4px;
     border-radius: 4px;
-    background-color: #FFF;
+    background-color: $white;
     animation: scroll ease-in-out 2s infinite;
   }
   
@@ -330,98 +292,14 @@ html{
     font-weight: 500;
     text-align: center;
     display: block;
-    color: #FFF;
+    color: $white;
     left: -19px;
     bottom: -28px;
   }
   
-  @keyframes scroll {
-    75%{
-      opacity: 0.5;
-    }
-  
-    100%{
-      transform: translateY(12px);
-      opacity: 0;
-    }
-  }
-  
-  .title{
-    margin: 0;
-  
-    &--big{
-      padding: 24px 0;
-      font-size: 64px;
-    }
-  }
-  
-  .footer{
-    position: relative;
-    background-color: #000;
-    letter-spacing: 1px;
-    font-weight: 300;
-  
-    &__top{
-      display: grid;
-      grid-template-columns: repeat(7, 1fr);
-      padding: 48px 0;
-    }
-  
-    &__bottom{
-      display: flex;
-      justify-content: space-between;
-      border-top: 2px solid #141414;
-      padding: 24px 0;
-      list-style: none;
-      font-size: 14px;
-    }
-  
-    &__menu{
-      display: flex;
-    }
-  
-    &__logo{
-      grid-column: 1;
-    }
-  
-    a{
-      color: #FFFFFF;
-      text-decoration: none;
-    }
-  
-    .dwt{
-      height: 18px;
-    }
-  }
-  
-  .menu-secondaire__list{
-    display: flex;
-    gap: 48px;
-    grid-column: 2 / 6;
-  }
-  
-  .menu-secondaire__element{
-    list-style: none;
-  }
-  
-  .menu-secondaire__element a{
-    color: #FFFFFF;
-    padding: 12px;
-    text-decoration: none;
-    font-weight: 500;
-    letter-spacing: 1px;
-  }
-  
-  .secondaire{
-    display: flex;
-    list-style: none;
-    grid-column: 6 / 8;
-    justify-content: flex-end;
-  }
-  
   .btn__more{
-    //background-color: #FFF;
-    border: 2px solid #FFF;
+    //background-color: $white;
+    border: 2px solid $white;
     height: 42px;
     width: 42px;
     border-radius: 50%;
@@ -432,15 +310,6 @@ html{
   
   .btn__more:hover{
     transform: scale(1.05);
-  }
-  
-  @keyframes pulse{
-    50%{
-      box-shadow: 0 0 0 12px rgba(255, 255, 255, 0.01);
-    }
-    51%{
-      box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.01);
-    }
   }
   
   .current-page{
@@ -459,7 +328,7 @@ html{
     content: '';
     height: 2px;
     width: 48px;
-    background-color: #FFF;
+    background-color: $white;
   }
   
   .current-page::after{
@@ -469,7 +338,7 @@ html{
     content: '';
     height: 2px;
     width: 96px;
-    background-color: #FFF;
+    background-color: $white;
   }
   
   .outline{
@@ -477,7 +346,7 @@ html{
     font-weight: 600;
     text-transform: uppercase;
     color: transparent;
-    -webkit-text-stroke: 2px #D44421;
+    -webkit-text-stroke: 2px $orange;
   }
   
   .actif [data-name="Stroke"]{
@@ -486,11 +355,12 @@ html{
   
   .actif [data-name="Fill"]{
     stroke: #872517;
-    fill: #D44421;
+    fill: $orange;
   }
   
   .tabs{
-    background-color: #080808;
+    background-color: $black;
+    color: $lightgrey;
   }
   
   .canvas{
@@ -506,11 +376,13 @@ html{
     background-color: transparent;
     cursor: pointer;
     text-decoration: none;
+    font-family: 'Inter', sans-serif;
 
     &--instrument{
       display: flex;
-      color: #999999;
+      color: $lightgrey;
       font-size: 18px;
+      padding: 12px 0;
     }
   }
 
@@ -518,10 +390,8 @@ html{
     display: flex;
     flex-direction: column;
     text-align: left;
-    border-left: 2px solid #999999;
+    border-left: 2px solid $lightgrey;
     padding-left: 12px;
-    margin-left: 12px;
-    font-family: 'Inter', sans-serif;
 
     span:nth-child(odd){
       letter-spacing: 1px;
@@ -531,4 +401,22 @@ html{
     span:nth-child(even){
       font-size: 14px;
     }
+  }
+
+  .number{
+    letter-spacing: 1px;
+    width: 26px;
+    text-align: right;
+    padding-right: 12px;
+  }
+
+  .instrument__list{
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  .pagination{
+    text-align: right;
+    letter-spacing: 1px;
   }

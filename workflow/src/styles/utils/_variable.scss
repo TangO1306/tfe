@@ -1,0 +1,60 @@
+$black: #080808;
+$lightblack: #141414;
+$darkgrey: #525252;
+$lightgrey: #999999;
+$white: #FFF;
+$orange: #D44421;
+
+$rapportMobile: 1.2;
+$fontsizeMobile: 16px;
+
+$rapportDesktop: 1.2;
+$fontsizeDesktop: 18px;
+$fontsizeImage: 14px;
+
+
+button{
+  font-size: $fontsizeMobile;
+}
+
+p{
+  font-size: $fontsizeMobile;
+}
+
+.title--small{
+  font-size: $fontsizeMobile * $rapportMobile;
+}
+
+.title--medium{
+  font-size: $fontsizeMobile * $rapportMobile * $rapportMobile * $rapportMobile;
+}
+
+.title--large{
+  font-size: $fontsizeMobile * $rapportMobile * $rapportMobile * $rapportMobile * $rapportMobile * $rapportMobile;
+}
+
+.title--extralarge{
+  font-size: $fontsizeMobile * $rapportMobile * $rapportMobile * $rapportMobile * $rapportMobile * $rapportMobile * $rapportMobile * $rapportMobile;
+}
+
+@media(min-width : 767px){
+  p{
+    font-size: $fontsizeDesktop;
+  }
+
+  .title--small{
+    font-size: $fontsizeDesktop * $rapportDesktop;
+  }
+
+  .title--medium{
+    font-size: $fontsizeDesktop * $rapportDesktop * $rapportDesktop * $rapportDesktop;
+  }
+
+  .title--large{
+    font-size: $fontsizeDesktop * $rapportDesktop * $rapportDesktop * $rapportDesktop * $rapportDesktop * $rapportDesktop;
+  }
+
+  .title--extralarge{
+    font-size: $fontsizeDesktop * $rapportDesktop * $rapportDesktop * $rapportDesktop * $rapportDesktop * $rapportDesktop * $rapportDesktop * $rapportDesktop;
+  }
+}
