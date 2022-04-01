@@ -102,7 +102,7 @@ masks.forEach( mask => {
 
 // Tabs SVG
 
-let instrument = document.querySelectorAll(".instrument__element--btn");
+let instrument = document.querySelectorAll(".btn--instrument");
 for(let i = 0; i < instrument.length; i++){
     instrument[i].addEventListener("click", buttonCallback);
 }
