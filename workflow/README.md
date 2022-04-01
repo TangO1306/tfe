@@ -1,42 +1,25 @@
-# Gulp starter
+# Simple Workflow with Laravel Mix.
 
-All packages are configured in the package.json.  
-Run `npm install` or manually install the following modules.
+## Install
 
-## Install basic packages
-```
-npm init
-npm install --save-dev gulp
-npm install --save-dev gulp-sass
-```
+- `npm i`
 
-## Install packages for SASS and CSS
-```
-npm install --save-dev gulp-sourcemaps
-npm install --save-dev gulp-postcss
-npm install --save-dev autoprefixer
-npm install --save-dev cssnano
-```
+## Features
 
-## Install Javascript
-```
-npm install --save-dev gulp-babel
-npm install --save-dev gulp-concat
-npm install --save-dev gulp-uglify
-```
+- Copy `src/*.html` to `dist` folder.
+- Copy `src/assets/*/` to `dist/assets/*/` folder.
+- Compile SASS `src/styles/app.scss` to `dist/styles` folder.
+- Bundle and transpile JS `src/scripts/app.js` to `dist/scripts` folder.
+- Create sources maps.
+- Run a dev web server with browsersync.
 
-## Install browsersync
-```
-npm install --save-dev browser-sync
-```
+## Commands
 
-## Install imagemin
-```
-npm install --save-dev gulp-imagemin
-```
+- `npm start` : build on files changes, launch a dev server with browsersync.
+- `npm run build` : clean, lint and build the project.
+- `npm run clean` : clean the `dist` folder.
 
-## Install eslinter
-```
-npm install --save-dev gulp-eslint
-./node_modules/.bin/eslint --init
-```
+## Warning
+
+Not intended to be used in production since minification as been disabled.  
+For school project purpose only.
