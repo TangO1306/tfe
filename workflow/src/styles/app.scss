@@ -419,4 +419,14 @@ html{
   .pagination{
     text-align: right;
     letter-spacing: 1px;
+    font-size: 22px;
+    margin: auto 0;
+  }
+
+  .currentNumber{
+    font-weight: 600;
+    color: $white;
+  }
+  .p__instrument{
+    height: 153px;
   }

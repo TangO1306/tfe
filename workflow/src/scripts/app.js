@@ -35,6 +35,21 @@ function removeAnchor() {
     }, 5);
 }
 
+// Burger menu
+
+let navButton = document.querySelector(".btn--menu");
+navButton.addEventListener("click", toggleNavigation);
+let meElement = document.querySelector(".burger-menu");
+function toggleNavigation(){
+    if(document.body.hasAttribute("data-menu")){
+        document.body.removeAttribute("data-menu");
+        meElement.setAttribute("src", "assets/images/burger-menu.svg");
+    }else{
+        document.body.setAttribute("data-menu", true);
+        meElement.setAttribute("src", "assets/images/croix.svg");
+    }
+}
+
 // GSAP
 
 let paragraphs = document.querySelectorAll('p');
@@ -102,6 +117,62 @@ masks.forEach( mask => {
 
 // Tabs SVG
 
+const content = [
+    {
+        titre: "Mastcam-Z",
+        nombre: "01 ",
+        liste: ["100", "80", "2"],
+        description: "Le système de caméra principale possède deux objectifs capables de zoomer, de faire des photos panoramiques et des vidéos 3D à grande vitesse pour capter une vue d’ensemble du paysage martien. Ses yeux aident à comprendre le terrain autour du rover pour identifier d’anciens lacs, ruisseaux mais aussi observer les phénomènes astronomiques, météorologiques comme les tourbillons de poussière et les déplacements du rover.",
+    },
+    {
+        titre: "MEDA",
+        nombre: "02 ",
+        liste: ["100", "80", "2"],
+        description: "Comme une station météorologique, il enregistre les différents paramètres atmosphériques de Mars à l’aide de capteurs répartis sur l’ensemble de l’astromobile. Il mesure entre autres la température, la vitesse et la direction du vent, la pression, l’humidité et surveille aussi la quantité de poussière dans l’air qui pourrait endommager les instruments du véhicule.",
+    },
+    {
+        titre: "PIXL",
+        nombre: "03 ",
+        liste: ["100", "80", "2"],
+        description: "Le spectromètre à rayons X analyse et identifie les divers éléments chimiques que compose la roche sur Mars. Il dispose également d’un appareil photo capable de prendre des photos très détaillées des textures de la roche. Ces deux outils réunis recherchent de possibles signes de vie passée, laissées par les bactéries sur les minéraux.",
+    },
+    {
+        titre: "RIMFAX",
+        nombre: "04 ",
+        liste: ["100", "80", "2"],
+        description: "Le géoradar sonde les couches géologiques jusqu’à 10 mètres de profondeur. Grâce aux ondes réfléchies dans le sol, il peut détecter la présence de glace, de roche, de sable ou même de l’eau à l’état liquide. Il sert à associer les informations sur la stratigraphie que compose le sous-sol de la planète rouge aux échantillons prélevés dans une même zone.",
+    },
+    {
+        titre: "SHERLOC",
+        nombre: "05 ",
+        liste: ["100", "80", "2"],
+        description: "Les spectromètres et le laser identifient les minéraux, les matières organiques et les biosignatures, une trace physique ou chimique qui sont des indices potentiels d’une forme de vie passée. Il est aussi équipé de la caméra WATSON et transporte de petits échantillons de combinaison spatiale (prévue pour une future exploration humaine) afin de tester leur résistance dans le dur environnement martien. La caméra les cible pour étalonner la caméra et les spectromètres.",
+    },
+    {
+        titre: "SuperCam",
+        nombre: "06 ",
+        liste: ["100", "80", "2"],
+        description: "Les spectromètres et le laser examinent le sol et les roches pour obtenir leur composition chimique, moléculaire et atomique. Sa super vision lui permet de distinguer les éléments de la poussière qui pourraient être nocifs pour les humains et trouver des éléments qui se sont altérés ou érodés dans l’eau. Il dispose aussi d’un microphone pour pouvoir écouter l’environnement martien et améliorer leur analyse en fonction du son émis par le laser.",
+    },
+    {
+        titre: "MOXIE",
+        nombre: "07 ",
+        liste: ["100", "80", "2"],
+        description: "Le prototype produit de l’oxygène à partir de l’atmosphère martienne composé principalement de dioxyde de carbone. Il doit pouvoir démontrer un moyen de produire de l’oxygène de manière autonome pour la respiration et le propulseur afin de se préparer dans le futur à l’exploration humaine de Mars.",
+    }
+];
+
+const titre = document.querySelector(".title--tabs");
+const nombre = document.querySelector(".currentNumber");
+const description = document.querySelector(".p__instrument");
+
+const loadContent = (content) => {
+    titre.innerHTML = content.titre;
+    nombre.innerHTML = content.nombre;
+    liste.innerHTML = content.liste;
+    description.innerHTML = content.description;
+}
+
 let instrument = document.querySelectorAll(".btn--instrument");
 for(let i = 0; i < instrument.length; i++){
     instrument[i].addEventListener("click", buttonCallback);
@@ -109,6 +180,9 @@ for(let i = 0; i < instrument.length; i++){
 
 function buttonCallback(event){
     let id = event.currentTarget.getAttribute("data-tab");
+    let number = id.split("instrument");
+    let nombre = number[1] - 1;
+    loadContent(content[nombre]);
 
     let tabs = document.querySelectorAll(".instrument");
     for(let i = 0; i < tabs.length; i++){
@@ -119,9 +193,15 @@ function buttonCallback(event){
     currentTab.classList.add("actif");
 }
 
+// Annee copyright
+
+let annee = (new Date).getFullYear(),
+date = document.querySelector(".date");
+date.innerHTML = "Tanguy Hellin ©" + annee;
+
 // Audio Visualizer
 
-document.querySelector('button').addEventListener('click', function() {
+document.querySelector('.play').addEventListener('click', function() {
     audio.resume().then(() => {
       console.log('Playback resumed successfully');
     });
