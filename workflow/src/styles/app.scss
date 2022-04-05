@@ -16,7 +16,8 @@ html{
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-    overflow: overlay;
+    overflow-y: overlay;
+    overflow-x: hidden;
     font-family: 'Inter', sans-serif;
   }
   
@@ -146,20 +147,19 @@ html{
     mix-blend-mode: difference;
     animation: line .75s ease-out forwards;
     &-1{
-      left: 20%;
-      animation-delay: 2s;
+      left: 20vw;
     }
     &-2{
-      left: 40%;
-      animation-delay: 2.15s;
+      left: 40vw;
+      animation-delay: 0.15s;
     }
     &-3{
-      left: 60%;
-      animation-delay: 2.3s;
+      left: 60vw;
+      animation-delay: 0.3s;
     }
     &-4{
-      left: 80%;
-      animation-delay: 2.45s;
+      left: 80vw;
+      animation-delay: 0.45s;
     }
   }
   
@@ -176,6 +176,22 @@ html{
   
     &--content{
       background-color: $white;
+    }
+
+    &--mission{
+      background-color: $black;
+      height: 100vh;
+
+
+      .container{
+        margin-top: 144px;
+        height: 100%;
+        background-image: url("../assets/images/atlas-V.jpg");
+        background-repeat: no-repeat;
+        background-size: 100%;
+        background-position: center;
+        background-blend-mode: darken;
+      }
     }
   }
   
@@ -376,7 +392,8 @@ html{
     background-color: transparent;
     cursor: pointer;
     text-decoration: none;
-    font-family: 'Inter', sans-serif;
+    font-family: 'Be Vietnam Pro', sans-serif;
+    font-size: $fontsizeDesktop;
 
     &--instrument{
       display: flex;
@@ -427,6 +444,41 @@ html{
     font-weight: 600;
     color: $white;
   }
+
   .p__instrument{
     height: 153px;
+  }
+
+  html, body, .wrapper, .panel{
+    height: 100vh;
+  }
+
+  .wrapper{
+    width: 300%;
+    display: flex;
+    flex-wrap: nowrap;
+  }
+
+  .panel{
+    width: 100%;
+    color: $white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .jaune{
+    background-color: #fca311;
+  }
+
+  .bleu{
+    background-color: #1d3557;
+  }
+
+  .rouge{
+    background-color: #ff0000;
+  }
+
+  .hidden{
+    overflow: hidden;
   }

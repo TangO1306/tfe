@@ -10,25 +10,20 @@
 		<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,300;0,400;0,600;0,700;0,900;1,300;1,400;1,600;1,700;1,900&family=Inter:wght@300;400;700&display=swap" rel="stylesheet">
 	</head>
 	<body>
-		<header>
-			<div class="nav">
-				<nav class="menu">
-					<a class="menu__logo" href="index.html"><img src="#" alt="logo"></a>
-					<ul class="menu__list">
-						<li class="menu__element"><a class="menu__element--lien" href="#">Mars</a></li>
-						<li class="menu__element"><a class="menu__element--lien" href="#">Mission</a></li>
-						<li class="menu__element"><a class="menu__element--lien" href="#">Rover</a></li>
-					</ul>
-				</nav>
-			</div>
+		<header class="header">
+      <div class="menu">
+        <a class="menu__logo" href="index.html"><img src="#" alt="logo"></a>
+        <button class="btn btn--menu"><span class="menu__text">Menu</span><img class="menu__img" src="assets/images/burger-menu.svg" alt="bouton menu"></button>
+      </div>
+      <nav class="nav">
+        <ul class="nav__list">
+          <li class="nav__element"><a class="nav__element--lien" href="mars.html">Mars</a></li>
+          <li class="nav__element"><a class="nav__element--lien" href="mission.html">Mission</a></li>
+          <li class="nav__element"><a class="nav__element--lien" href="rover.html">Rover</a></li>
+        </ul>
+      </nav>
 		</header>
 		<main>
-			<!--<div class="cursor cursor-outer"></div>
-			<div class="cursor cursor-inner"></div>-->
-
-			<!--<div class="loader">
-				<p class="logo">Logo</p>
-			</div>-->
 
 			<div class="lines">
 				<div class="line line-1"></div>
@@ -357,7 +352,21 @@
                     <path data-name="Stroke" d="m444.11 291.26-41.72-7.09"/>
                   </g>
               </svg>
-              <p class="p__instrument" id="instrument7">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt atque quis illum harum repellat? Eum, ex amet! Ad ducimus excepturi iusto est, beatae ab aut nihil hic autem corrupti vero! Lorem, ipsum dolor sit amet consectetur adipisicing elit. Rem architecto nam doloremque iste fugiat ipsa illum magni perspiciatis fuga corporis provident laudantium ratione in facere iure, impedit nesciunt? Esse, amet?</p>
+              <ul>
+                <li>
+                  <span>Poids</span>
+                  <span class="poids"></span>
+                </li>
+                <li>
+                  <span>Consommation</span>
+                  <span class="consommation"></span>
+                </li>
+                <li>
+                  <span>Données</span>
+                  <span class="données"></span>
+                </li>
+              </ul>
+              <p class="p__instrument">Le système de caméra principale possède deux objectifs capables de zoomer, de faire des photos panoramiques et des vidéos 3D à grande vitesse pour capter une vue d’ensemble du paysage martien. Ses yeux aident à comprendre le terrain autour du rover pour identifier d’anciens lacs, ruisseaux mais aussi observer les phénomènes astronomiques, météorologiques comme les tourbillons de poussière et les déplacements du rover.</p>
             </div>
             <div class="audio">
               <h4>Vent sur Mars</h4>

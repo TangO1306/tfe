@@ -27,7 +27,9 @@ text.innerHTML = text.innerText.split("").map(
 
 const url = document.querySelector(".scroll");
 
-url.addEventListener("click", removeAnchor);
+if(url){
+    url.addEventListener("click", removeAnchor);
+}
 
 function removeAnchor() {
     setTimeout(() => {
@@ -37,20 +39,39 @@ function removeAnchor() {
 
 // Burger menu
 
-let navButton = document.querySelector(".btn--menu");
-navButton.addEventListener("click", toggleNavigation);
-let meElement = document.querySelector(".burger-menu");
+let menuButton = document.querySelector(".btn--menu");
+let menuText = document.querySelector(".menu__text");
+menuButton.addEventListener("click", toggleNavigation);
+let menuImage = document.querySelector(".menu__img");
 function toggleNavigation(){
     if(document.body.hasAttribute("data-menu")){
+        menuText.innerHTML = "Menu";
         document.body.removeAttribute("data-menu");
-        meElement.setAttribute("src", "assets/images/burger-menu.svg");
+        menuImage.setAttribute("src", "assets/images/burger-menu.svg");
     }else{
+        menuText.innerHTML = "Fermer";
         document.body.setAttribute("data-menu", true);
-        meElement.setAttribute("src", "assets/images/croix.svg");
+        menuImage.setAttribute("src", "assets/images/croix.svg");
     }
 }
 
 // GSAP
+
+let titles = document.querySelectorAll('.title');
+
+titles.forEach( title => {
+    let tl = gsap.timeline({
+        scrollTrigger: {
+            trigger: title,
+        }
+    });
+
+    tl.from(title, 0.6, {
+        y: 60,
+        ease: "Power4.out",
+        delay: 0.3
+    })
+})
 
 let paragraphs = document.querySelectorAll('p');
 
@@ -115,49 +136,77 @@ masks.forEach( mask => {
     });*/
 })
 
+/*let sections = gsap.utils.toArray(".panel");
+
+gsap.to(sections, {
+    xPercent: -100 * (sections.length - 1),
+    ease: "none",
+    scrollTrigger: {
+        trigger: ".wrapper",
+        pin: true,
+        scrub: 1,
+        snap: 1 / (sections.lenght - 1),
+        end : () => "+=" + document.querySelector(".wrapper").offsetWidth
+    }
+});*/
+
+let sections = gsap.utils.toArray(".panel");
+
+let scrollTween = gsap.to(sections, {
+    xPercent: -100 * (sections.length - 1),
+    ease: "none", // <-- IMPORTANT!
+    scrollTrigger: {
+      trigger: ".wrapper",
+      pin: true,
+      scrub: 0.1,
+      //snap: directionalSnap(1 / (sections.length - 1)),
+      end: "+=3000"
+    }
+  });
+
 // Tabs SVG
 
 const content = [
     {
         titre: "Mastcam-Z",
         nombre: "01 ",
-        liste: ["100", "80", "2"],
+        liste: ["4 kg", "17.4 W", "18,5 Mo"],
         description: "Le système de caméra principale possède deux objectifs capables de zoomer, de faire des photos panoramiques et des vidéos 3D à grande vitesse pour capter une vue d’ensemble du paysage martien. Ses yeux aident à comprendre le terrain autour du rover pour identifier d’anciens lacs, ruisseaux mais aussi observer les phénomènes astronomiques, météorologiques comme les tourbillons de poussière et les déplacements du rover.",
     },
     {
         titre: "MEDA",
         nombre: "02 ",
-        liste: ["100", "80", "2"],
+        liste: ["5.5 kg", "17 W", "11 Mo"],
         description: "Comme une station météorologique, il enregistre les différents paramètres atmosphériques de Mars à l’aide de capteurs répartis sur l’ensemble de l’astromobile. Il mesure entre autres la température, la vitesse et la direction du vent, la pression, l’humidité et surveille aussi la quantité de poussière dans l’air qui pourrait endommager les instruments du véhicule.",
     },
     {
         titre: "PIXL",
         nombre: "03 ",
-        liste: ["100", "80", "2"],
+        liste: ["6.9 kg", "25 W", "2 Mo"],
         description: "Le spectromètre à rayons X analyse et identifie les divers éléments chimiques que compose la roche sur Mars. Il dispose également d’un appareil photo capable de prendre des photos très détaillées des textures de la roche. Ces deux outils réunis recherchent de possibles signes de vie passée, laissées par les bactéries sur les minéraux.",
     },
     {
         titre: "RIMFAX",
         nombre: "04 ",
-        liste: ["100", "80", "2"],
+        liste: ["3 kg", "7.5 W", "10 Mo"],
         description: "Le géoradar sonde les couches géologiques jusqu’à 10 mètres de profondeur. Grâce aux ondes réfléchies dans le sol, il peut détecter la présence de glace, de roche, de sable ou même de l’eau à l’état liquide. Il sert à associer les informations sur la stratigraphie que compose le sous-sol de la planète rouge aux échantillons prélevés dans une même zone.",
     },
     {
         titre: "SHERLOC",
         nombre: "05 ",
-        liste: ["100", "80", "2"],
+        liste: ["4.7 kg", "48.8 W", "10 Mo"],
         description: "Les spectromètres et le laser identifient les minéraux, les matières organiques et les biosignatures, une trace physique ou chimique qui sont des indices potentiels d’une forme de vie passée. Il est aussi équipé de la caméra WATSON et transporte de petits échantillons de combinaison spatiale (prévue pour une future exploration humaine) afin de tester leur résistance dans le dur environnement martien. La caméra les cible pour étalonner la caméra et les spectromètres.",
     },
     {
         titre: "SuperCam",
         nombre: "06 ",
-        liste: ["100", "80", "2"],
+        liste: ["10.6 kg", "17.9 W", "0.5 Mo"],
         description: "Les spectromètres et le laser examinent le sol et les roches pour obtenir leur composition chimique, moléculaire et atomique. Sa super vision lui permet de distinguer les éléments de la poussière qui pourraient être nocifs pour les humains et trouver des éléments qui se sont altérés ou érodés dans l’eau. Il dispose aussi d’un microphone pour pouvoir écouter l’environnement martien et améliorer leur analyse en fonction du son émis par le laser.",
     },
     {
         titre: "MOXIE",
         nombre: "07 ",
-        liste: ["100", "80", "2"],
+        liste: ["17.1 kg", "300 W", "10g d'oxygène"],
         description: "Le prototype produit de l’oxygène à partir de l’atmosphère martienne composé principalement de dioxyde de carbone. Il doit pouvoir démontrer un moyen de produire de l’oxygène de manière autonome pour la respiration et le propulseur afin de se préparer dans le futur à l’exploration humaine de Mars.",
     }
 ];
@@ -165,11 +214,16 @@ const content = [
 const titre = document.querySelector(".title--tabs");
 const nombre = document.querySelector(".currentNumber");
 const description = document.querySelector(".p__instrument");
+const poids = document.querySelector(".poids");
+const consommation = document.querySelector(".consommation");
+const données = document.querySelector(".données");
 
 const loadContent = (content) => {
     titre.innerHTML = content.titre;
     nombre.innerHTML = content.nombre;
-    liste.innerHTML = content.liste;
+    poids.innerHTML = content.liste[0];
+    consommation.innerHTML = content.liste[1];
+    données.innerHTML = content.liste[2];
     description.innerHTML = content.description;
 }
 
@@ -201,31 +255,37 @@ date.innerHTML = "Tanguy Hellin ©" + annee;
 
 // Audio Visualizer
 
-document.querySelector('.play').addEventListener('click', function() {
-    audio.resume().then(() => {
-      console.log('Playback resumed successfully');
+let start = document.querySelector('.play')
+if(start){
+    start.addEventListener('click', function() {
+        audio.resume().then(() => {
+            console.log('Playback resumed successfully');
+        });
     });
-  });
+}
 
 const play = document.querySelector(".play");
-play.addEventListener("click", playSound);
 
-const canvas = document.querySelector(".canvas"),
+if(play){
+    play.addEventListener("click", playSound);
+
+    const canvas = document.querySelector(".canvas"),
       ctx = canvas.getContext("2d"),
       w = window.innerWidth,
       h = window.innerHeight,
       dpr = window.devicePixelRatio;
 
-const canvasSetup = () => {
-  canvas.width = w * dpr;
-  canvas.height = h * dpr;
-  ctx.scale(dpr, dpr);
-  ctx.fillStyle = 'white';
-  ctx.strokeStyle = 'white';
-  ctx.lineCap = 'round';
-};
+    const canvasSetup = () => {
+    canvas.width = w * dpr;
+    canvas.height = h * dpr;
+    ctx.scale(dpr, dpr);
+    ctx.fillStyle = 'white';
+    ctx.strokeStyle = 'white';
+    ctx.lineCap = 'round';
+    };
 
-canvasSetup();
+    canvasSetup();
+}
 
 function playSound(){
     let audio = new Audio();
