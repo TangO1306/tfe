@@ -29,3 +29,26 @@
     grid-column: 4/9;
     grid-row: 3/4;
 }
+
+.footer{
+    &__top{
+        display: grid;
+        grid-template-columns: repeat(7, 1fr);
+    }
+
+    &__logo{
+        grid-column: 1;
+    }
+}
+
+.nav-left{
+    &__list{
+        grid-column: 2 / 6;
+    }
+}
+
+.nav-right{
+    &__list{
+        grid-column: 6 / 8;
+    }
+}

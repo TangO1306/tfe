@@ -1,64 +1,57 @@
 .footer{
     position: relative;
     background-color: #000;
-    letter-spacing: 1px;
-    font-weight: 300;
-  
-    &__top{
-        display: grid;
-        grid-template-columns: repeat(7, 1fr);
-        padding: 48px 0;
+
+    &__top, &__bottom{
+        padding: 24px 0;
+        align-items: center;
     }
-  
+
     &__bottom{
         display: flex;
         justify-content: space-between;
         border-top: 2px solid $lightblack;
-        padding: 24px 0;
-        list-style: none;
-        font-size: 14px;
+        font-size: $fontsizeImage;
     }
-  
-    &__menu{
-        display: flex;
-    }
-  
+
     &__logo{
-        grid-column: 1;
-    }
-  
-    a{
-        color: $white;
-        text-decoration: none;
-    }
-  
-    .dwt{
-        height: 18px;
-    }
-}
+        display: inline-flex;
 
-.menu-secondaire{
-    &__list{
-    display: flex;
-    gap: 48px;
-    grid-column: 2 / 6;
-    }
-
-    &__element{
-        list-style: none;
-        a{
-            color: $white;
-            padding: 12px;
-            text-decoration: none;
-            font-weight: 500;
-            letter-spacing: 1px;
+        img{
+            height: 24px;
         }
     }
+
+    a{
+        font-family: 'Be Vietnam Pro', sans-serif;
+        color: $white;
+        text-decoration: none;
+        padding: 12px 0;
+        letter-spacing: 1px;
+        font-weight: 300;
+    }
 }
-  
-.secondaire{
-    display: flex;
-    list-style: none;
-    grid-column: 6 / 8;
-    justify-content: flex-end;
+
+.dwt{
+    height: 18px;
+}
+
+.nav-left{
+    &__list{
+        display: flex;
+        gap: 48px;
+    }
+
+    &__element a{
+        font-weight: 500;
+    }
+}
+
+.nav-right{
+    &__list{
+        display: flex;
+        justify-content: flex-end;
+        gap: 48px;
+        align-items: center;
+    }
 }
