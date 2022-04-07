@@ -5,23 +5,24 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 gsap.registerPlugin(ScrollTrigger);
 
-gsap.from(".img", {x:150, opacity: 0, duration:1.5})
+// No-repeat Loader
 
-/*const cursorInner = document.querySelector(".cursor-inner");
-const cursorOuter = document.querySelector(".cursor-outer");
-document.addEventListener("mousemove", e=>{
-    cursorInner.style.top = e.pageY + "px";
-    cursorInner.style.left = e.pageX + "px";
+let introEnd = document.querySelector(".loader");
 
-    cursorOuter.style.top = e.pageY + "px";
-    cursorOuter.style.left = e.pageX + "px";
-});
+if (typeof sessionStorage.animation === 'undefined'){
+    sessionStorage.setItem("animation", "start");
+}
 
-const text = document.querySelector(".text p");
-text.innerHTML = text.innerText.split("").map(
-    (char, i) =>
-    `<span style="transform: rotate(${i * 8.2}deg)">${char}</span>`
-).join("");*/
+if(introEnd){
+    if(sessionStorage.getItem("animation") == "end"){
+        introEnd.classList.add("no-repeat");
+    }
+    introEnd.addEventListener("animationend", noRepeatAnimation);
+}
+
+function noRepeatAnimation(){
+    sessionStorage.setItem("animation", "end");
+}
 
 // Désactivation ancre URL
 
@@ -54,115 +55,6 @@ function toggleNavigation(){
         menuImage.setAttribute("src", "assets/images/croix.svg");
     }
 }
-
-// GSAP
-
-let titles = document.querySelectorAll('.title');
-
-titles.forEach( title => {
-    let tl = gsap.timeline({
-        scrollTrigger: {
-            trigger: title,
-        }
-    });
-
-    tl.from(title, 0.6, {
-        y: 60,
-        ease: "Power4.out",
-        delay: 0.3
-    })
-})
-
-let paragraphs = document.querySelectorAll('p');
-
-let masks = document.querySelectorAll('.card');
-
-paragraphs.forEach( paragraph => {
-    let tl = gsap.timeline({
-        scrollTrigger: {
-            trigger: paragraph,
-        }
-    });
-
-    tl.from(paragraph, 1, {
-        y: 50,
-        opacity: 0
-    })
-})
-
-masks.forEach( mask => {
-    let content = mask.querySelector('.card__content');
-
-    let tl = gsap.timeline({
-        scrollTrigger: {
-            trigger: mask,
-            start: "top 50%",
-            end: "50% 0%",
-            toggleActions: "restart none none reset",
-            scrub: 1,
-            markers: true
-        }
-    });
-
-    tl.set(mask, {autoAlpha: 1});
-
-    tl.fromTo(
-        mask,
-        {
-            clipPath: "polygon(0 0, 0 0, 0 100%, 0% 100%)"
-        },
-        {
-            clipPath: "polygon(0 0, 100% 0, 100% 100%, 0 100%)",
-            duration: 0.8,
-            ease: "Power4.out"
-        }
-    );
-
-    tl.from(content, 2.4, {
-    scale: 1.1,
-    ease: "Power4.out",
-    delay: -0.8
-    });
-
-    /*tl.from(mask, 1.5, {
-        xPercent: -100,
-        ease: Power2.out
-    });
-    tl.from(content, 1.5, {
-        xPercent: 100,
-        scale: 1.6,
-        delay: -1.5,
-        ease: Power2.out
-    });*/
-})
-
-/*let sections = gsap.utils.toArray(".panel");
-
-gsap.to(sections, {
-    xPercent: -100 * (sections.length - 1),
-    ease: "none",
-    scrollTrigger: {
-        trigger: ".wrapper",
-        pin: true,
-        scrub: 1,
-        snap: 1 / (sections.lenght - 1),
-        end : () => "+=" + document.querySelector(".wrapper").offsetWidth
-    }
-});*/
-
-let sections = gsap.utils.toArray(".panel");
-
-let scrollTween = gsap.to(sections, {
-    xPercent: -100 * (sections.length - 1),
-    ease: "none", // <-- IMPORTANT!
-    scrollTrigger: {
-      trigger: ".wrapper",
-      pin: true,
-      scrub: 0.1,
-      //snap: directionalSnap(1 / (sections.length - 1)),
-      end: "+=3000"
-    }
-  });
 
 // Tabs SVG
 
@@ -330,3 +222,99 @@ function playSound(){
     }
     animate();
 }
+
+// GSAP
+
+gsap.from(".img", {
+    x:150,
+    opacity: 0,
+    duration:1.5
+});
+
+const tween = gsap.from(".hidden span", {
+    ease: "power4.out",
+    y: "100%",
+    stagger: 0.2,
+    duration: 0.8,
+    delay: 0.4,
+    scrollTrigger: ".hidden span"
+});
+
+window.addEventListener( 'click', () => { 
+    tween.restart(); 
+  }, false );
+
+let paragraphs = document.querySelectorAll('p');
+
+let masks = document.querySelectorAll('.card');
+
+paragraphs.forEach( paragraph => {
+    gsap.from(paragraph, {
+        scrollTrigger: {
+            trigger: paragraph,
+        },
+        duration: 0.6,
+        y: 50,
+        opacity: 0
+    });
+})
+
+masks.forEach( mask => {
+    let content = mask.querySelector('.card__content');
+
+    let tl = gsap.timeline({
+        scrollTrigger: {
+            trigger: mask,
+            start: "top 50%",
+            end: "50% 0%",
+            toggleActions: "restart none none reset",
+            scrub: 1,
+            markers: true
+        }
+    });
+
+    tl.set(mask, {autoAlpha: 1});
+
+    tl.fromTo(
+        mask,
+        {
+            clipPath: "polygon(0 0, 0 0, 0 100%, 0% 100%)"
+        },
+        {
+            clipPath: "polygon(0 0, 100% 0, 100% 100%, 0 100%)",
+            duration: 0.8,
+            ease: "Power4.out"
+        }
+    );
+
+    tl.from(content, {
+    scale: 1.1,
+    ease: "Power4.out",
+    duration: 2.4,
+    delay: -0.8
+    });
+})
+
+let sections = gsap.utils.toArray(".panel");
+
+gsap.to(sections, {
+    xPercent: -100 * (sections.length - 1),
+    ease: "none",
+    scrollTrigger: {
+        trigger: ".wrapper",
+        pin: true,
+        scrub: 0.1,
+        end: "+=3000"//() => "+=" + (document.querySelector(".wrapper").offsetWidth)/2
+    }
+});
+
+gsap.to(".square", {
+    x: 1000,
+    scrollTrigger: {
+        trigger: ".square",
+        pin: true,
+        markers: true,
+        start: "top 80%",
+        end: "top 30%"
+    }
+});

@@ -1,7 +1,10 @@
+@import 'utils/variable';
+
 .title{
-    line-height: 0.95;
+    line-height: $lineheightTitle;
     font-family: 'Be Vietnam Pro', sans-serif;
     margin: 0;
+    
     &--small{
 
     }
