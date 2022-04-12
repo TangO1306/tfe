@@ -1,5 +1,20 @@
 @import 'utils/variable';
 
+.section{
+    &--intro{
+        .container{
+            display: grid;
+            grid-template-columns: repeat(9, 1fr);
+            grid-template-rows: 22% 22% auto;
+        }
+    }
+}
+
+.img{
+    grid-column: 3 / 8;
+    grid-row: 3 / 4;
+}
+
 .tabs{
     display: grid;
     grid-template-columns: repeat(9, 1fr);

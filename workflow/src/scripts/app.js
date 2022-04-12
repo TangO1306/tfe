@@ -226,10 +226,51 @@ function playSound(){
 // GSAP
 
 gsap.from(".img", {
-    x:150,
-    opacity: 0,
-    duration:1.5
+    y:100,
+    rotation: 10,
+    duration: 2.4
 });
+
+const tl = gsap.timeline();
+tl.set(".img", {
+    x: "-30%",
+    scale: 1.6,
+    opacity: 0
+});
+
+tl.fromTo(".img", 
+{
+    y: "85%",
+    rotation: 10,
+    transformOrigin: "50% 50%"
+},
+{
+    y: "70%",
+    rotation: 0,
+    transformOrigin: "0% 50%",
+    ease: "circ.out",
+    opacity: 1,
+    duration: 2.4
+});
+
+tl.to(".img", {
+    x: "0%",
+    scale: 1,
+    ease: "power2.out",
+    duration: 1.2,
+    delay: 0.6
+});
+
+tl.to(".img", {
+    y: 0,
+    ease: "power1.out",
+    duration: 1.8,
+    delay: -1.2
+});
+
+window.addEventListener( 'click', () => { 
+    tl.restart(); 
+  }, false );
 
 const tween = gsap.from(".hidden span", {
     ease: "power4.out",
@@ -275,8 +316,7 @@ masks.forEach( mask => {
 
     tl.set(mask, {autoAlpha: 1});
 
-    tl.fromTo(
-        mask,
+    tl.fromTo(mask,
         {
             clipPath: "polygon(0 0, 0 0, 0 100%, 0% 100%)"
         },
@@ -309,12 +349,11 @@ gsap.to(sections, {
 });
 
 gsap.to(".square", {
-    x: 1000,
     scrollTrigger: {
         trigger: ".square",
         pin: true,
         markers: true,
-        start: "top 80%",
-        end: "top 30%"
+        start: "top 60%",
+        end: "top 0%"
     }
 });
