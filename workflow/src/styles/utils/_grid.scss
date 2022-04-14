@@ -5,13 +5,25 @@
         .container{
             display: grid;
             grid-template-columns: repeat(9, 1fr);
-            grid-template-rows: 22% 22% auto;
+            grid-template-rows: 1fr 1fr 4.5fr;
+        }
+
+        .title--extralarge{
+            text-align: center;
+            grid-column: 3 / 8;
+            grid-row: 3 / 4;
         }
     }
 }
 
 .img{
     grid-column: 3 / 8;
+    grid-row: 3 / 4;
+    align-self: end;
+}
+
+.current-page{
+    grid-column: 9 / 10;
     grid-row: 3 / 4;
 }
 

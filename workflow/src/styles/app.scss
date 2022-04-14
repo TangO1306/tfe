@@ -109,7 +109,8 @@ html{
     &--intro{
       background-color: $black;
       background-image: url("../assets/images/space.jpg");
-      background-size: cover;
+      background-size: 105%;
+      background-position: 50%;
       background-repeat: no-repeat;
       color: $white;
   
@@ -257,7 +258,9 @@ html{
   
   .current-page{
     position: absolute;
-    bottom: 240px;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
     text-transform: uppercase;
     letter-spacing: 6px;
     font-weight: 600;
@@ -266,22 +269,14 @@ html{
   
   .current-page::before{
     position: absolute;
-    top: 12px;
-    left: -72px;
-    content: '';
-    height: 2px;
-    width: 48px;
-    background-color: $white;
-  }
-  
-  .current-page::after{
-    position: absolute;
-    top: 12px;
-    right: -114px;
-    content: '';
-    height: 2px;
-    width: 96px;
-    background-color: $white;
+    //top: 12px;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    //content: '';
+    //height: 2px;
+    //width: 192px;
+    background-color: $darkgrey;
   }
   
   .outline{

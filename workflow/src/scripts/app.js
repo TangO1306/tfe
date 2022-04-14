@@ -225,12 +225,6 @@ function playSound(){
 
 // GSAP
 
-gsap.from(".img", {
-    y:100,
-    rotation: 10,
-    duration: 2.4
-});
-
 const tl = gsap.timeline();
 tl.set(".img", {
     x: "-30%",
@@ -268,9 +262,37 @@ tl.to(".img", {
     delay: -1.2
 });
 
+tl.from(".title--extralarge", {
+    opacity: 0,
+    y: "-50%",
+    duration: 1.2
+})
+
 window.addEventListener( 'click', () => { 
     tl.restart(); 
-  }, false );
+}, false );
+
+const space = document.querySelector(".section--intro");
+
+document.addEventListener("mousemove", function(e){
+    parallax(e, ".section--intro", -20);
+});
+  
+function parallax(e, target, movement) {
+    let intro = document.querySelector(".section--intro");
+    let offsetX = intro.offsetWidth;
+    let offsetY = intro.offsetHeight;
+    let posX = e.clientX;
+    let posY = e.clientY;
+
+    console.log("posX :", posX, "posY :", posY);
+    console.log("offsetX :", intro.offsetWidth, "offsetY :", intro.offsetHeight);
+  
+    gsap.to(target, 1, {
+      backgroundPositionX: ((posX - offsetX / 2) / offsetX * movement) + 50,
+      backgroundPositionY: ((posY - offsetY / 2) / offsetY * movement) + 50
+    });
+  }
 
 const tween = gsap.from(".hidden span", {
     ease: "power4.out",
