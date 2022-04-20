@@ -33,56 +33,61 @@
 }
 
 .btn--menu{
-    display: flex;
-    gap: 12px;
-    align-items: center;
-    z-index: 12;
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  z-index: 12;
+}
+
+.grid{
+  background-blend-mode: normal;
+  position: fixed;
+  top: 0;
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+  z-index: 11;
+  background-color: $black;
+  right: -100vw;
+  transition: right .3s ease-out;
 }
 
 .nav{
-    background-blend-mode: normal;
-    position: fixed;
-    top: 0;
-    height: 100vh;
-    width: 100vw;
+  &__list{
+      display: flex;
+      flex-direction: column;
+  }
+
+  &__element{
+    border-top: 1px solid $darkgrey;
+    border-bottom: 1px solid $darkgrey;
     overflow: hidden;
-    z-index: 11;
-    background-color: $black;
-    right: -100vw;
-    transition: right .3s ease-out;
-    &__list{
-      display: none;
+    line-height: $lineheightTitle;
+    display: inline-block;
+
+    &--lien{
+      font-size: $fontsizeDesktop * $rapportDesktop * $rapportDesktop * $rapportDesktop * $rapportDesktop * $rapportDesktop;
+      color: $white;
+      text-decoration: none;
+      text-transform: uppercase;
+      font-weight: 700;
+      display: inline-block;
+
+      &:hover{
+        color: $darkgrey;
+      }
     }
+  }
 }
 
 body[data-menu]{
     .header{
-        mix-blend-mode: normal;
+      mix-blend-mode: normal;
     }
 
-    .nav{
-        display: flex;
-        align-items: center;
-        right: 0vw;
-        transition: right .3s ease-out;
-  
-        &__list{
-            display: flex;
-            flex-direction: column;
-            margin-left: 96px;
-        }
-  
-        &__element{
-           gap: 48px;
-  
-            &--lien{
-                font-size: 40px;
-                color: $white;
-                text-decoration: none;
-                text-transform: uppercase;
-                font-weight: 700;
-                padding: 20px 0;
-            }
-        }
+    .grid{
+      mix-blend-mode: normal;
+      right: 0vw;
+      //transition: right .3s ease-out;
     }
 }

@@ -2,8 +2,10 @@
 
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { MotionPathPlugin } from "gsap/MotionPathPlugin";
 
 gsap.registerPlugin(ScrollTrigger);
+gsap.registerPlugin(MotionPathPlugin);
 
 // No-repeat Loader
 
@@ -292,7 +294,44 @@ function parallax(e, target, movement) {
       backgroundPositionX: ((posX - offsetX / 2) / offsetX * movement) + 50,
       backgroundPositionY: ((posY - offsetY / 2) / offsetY * movement) + 50
     });
-  }
+}
+
+gsap.to(".deimos", {
+    duration: 160,
+	ease: "none",
+	repeat: -1,
+    rotate: 360,
+    transformOrigin: "50% 50%"
+});
+
+gsap.to(".phobos", {
+    duration: 40,
+	ease: "none",
+	repeat: -1,
+    rotate: 360,
+    transformOrigin: "50% 50%"
+});
+
+gsap.to(".lune", {
+    duration: 120,
+	ease: "none",
+	repeat: -1,
+    rotate: 360,
+    transformOrigin: "50% 50%"
+});
+
+const burger = gsap.timeline({paused:true, reversed:true});
+
+burger.from(".nav__element--lien", {
+    y: "100%",
+    delay: 0.6,
+    stagger: 0.15,
+    duration: 0.3,
+})
+
+menuButton.addEventListener('click', () => {
+    burger.reversed() ? burger.play() : burger.reverse();
+})
 
 const tween = gsap.from(".hidden span", {
     ease: "power4.out",
