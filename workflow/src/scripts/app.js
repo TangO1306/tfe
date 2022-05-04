@@ -128,9 +128,8 @@ for(let i = 0; i < instrument.length; i++){
 
 function buttonCallback(event){
     let id = event.currentTarget.getAttribute("data-tab");
-    let number = id.split("instrument");
-    let nombre = number[1] - 1;
-    loadContent(content[nombre]);
+    let number = Array.prototype.indexOf.call(instrument, this);
+    loadContent(content[number]);
 
     let tabs = document.querySelectorAll(".instrument");
     for(let i = 0; i < tabs.length; i++){
@@ -146,6 +145,47 @@ function buttonCallback(event){
 let annee = (new Date).getFullYear(),
 date = document.querySelector(".date");
 date.innerHTML = "Tanguy Hellin ©" + annee;
+
+// Slider
+
+const counter = document.querySelector(".counter1");
+let musicIndex = 0;
+
+const btnPrev=document.querySelector(".slider__btn--prev");
+const btnNext=document.querySelector(".slider__btn--next");
+
+if(btnNext){
+    btnNext.addEventListener("click", next);
+    btnPrev.addEventListener("click", prev);
+}
+
+function next(){
+    musicIndex = (musicIndex + 1) % 3;
+    counter.innerHTML = "0"+ (musicIndex + 1);
+    let elShow = document.querySelector(".slider__element--show"),
+    elNext=elShow.nextElementSibling;
+    elShow.classList.remove("slider__element--show");
+    if(elNext){
+        elNext.classList.add("slider__element--show");
+    }else{
+        let elFirst=elShow.parentNode.firstElementChild;
+        elFirst.classList.add("slider__element--show");
+    }
+}
+
+function prev(){
+    musicIndex = (musicIndex - 1 + 3) % 3;
+    counter.innerHTML = "0"+ (musicIndex + 1);
+    let elShow = document.querySelector(".slider__element--show"),
+    elPrev=elShow.previousElementSibling;
+    elShow.classList.remove("slider__element--show");
+    if(elPrev){
+        elPrev.classList.add("slider__element--show");
+    }else{
+        let elLast=elShow.parentNode.lastElementChild;
+        elLast.classList.add("slider__element--show");
+    }
+}
 
 // Audio Visualizer
 
@@ -286,14 +326,38 @@ function parallax(e, target, movement) {
     let offsetY = intro.offsetHeight;
     let posX = e.clientX;
     let posY = e.clientY;
-
-    console.log("posX :", posX, "posY :", posY);
-    console.log("offsetX :", intro.offsetWidth, "offsetY :", intro.offsetHeight);
   
     gsap.to(target, 1, {
       backgroundPositionX: ((posX - offsetX / 2) / offsetX * movement) + 50,
       backgroundPositionY: ((posY - offsetY / 2) / offsetY * movement) + 50
     });
+}
+
+const deimos = document.querySelector(".deimos");
+const phobos = document.querySelector(".phobos");
+
+if(deimos){
+    deimos.addEventListener("mouseenter", enterDeimos);
+    phobos.addEventListener("mouseenter", enterPhobos);
+
+    deimos.addEventListener("mouseleave", leaveDeimos);
+    phobos.addEventListener("mouseleave", leavePhobos);
+}
+
+function enterDeimos(){
+    phobos.style.opacity="0.33";
+}
+
+function leaveDeimos(){
+    phobos.style.opacity="1";
+}
+
+function enterPhobos(){
+    deimos.style.opacity="0.33";
+}
+
+function leavePhobos(){
+    deimos.style.opacity="1";
 }
 
 gsap.to(".deimos", {
@@ -320,19 +384,6 @@ gsap.to(".lune", {
     transformOrigin: "50% 50%"
 });
 
-const burger = gsap.timeline({paused:true, reversed:true});
-
-burger.from(".nav__element--lien", {
-    y: "100%",
-    delay: 0.6,
-    stagger: 0.15,
-    duration: 0.3,
-})
-
-menuButton.addEventListener('click', () => {
-    burger.reversed() ? burger.play() : burger.reverse();
-})
-
 const tween = gsap.from(".hidden span", {
     ease: "power4.out",
     y: "100%",
@@ -348,30 +399,26 @@ window.addEventListener( 'click', () => {
 
 let paragraphs = document.querySelectorAll('p');
 
-let masks = document.querySelectorAll('.card');
+let masks = document.querySelectorAll(".image__mask");
 
 paragraphs.forEach( paragraph => {
     gsap.from(paragraph, {
         scrollTrigger: {
             trigger: paragraph,
+            start: "top 75%"
         },
         duration: 0.6,
-        y: 50,
         opacity: 0
     });
 })
 
 masks.forEach( mask => {
-    let content = mask.querySelector('.card__content');
+    let content = mask.querySelector(".image__content");
 
     let tl = gsap.timeline({
         scrollTrigger: {
             trigger: mask,
-            start: "top 50%",
-            end: "50% 0%",
-            toggleActions: "restart none none reset",
-            scrub: 1,
-            markers: true
+            start: "top 75%"
         }
     });
 
@@ -383,16 +430,16 @@ masks.forEach( mask => {
         },
         {
             clipPath: "polygon(0 0, 100% 0, 100% 100%, 0 100%)",
-            duration: 0.8,
-            ease: "Power4.out"
+            duration: 0.6,
+            ease: "Power3.out"
         }
     );
 
     tl.from(content, {
-    scale: 1.1,
-    ease: "Power4.out",
-    duration: 2.4,
-    delay: -0.8
+        scale: 1.3,
+        ease: "Power4.out",
+        duration: 0.6,
+        delay: -0.6
     });
 })
 
@@ -418,3 +465,76 @@ gsap.to(".square", {
         end: "top 0%"
     }
 });
+
+const burger = gsap.timeline({paused:true, reversed:true});
+
+burger.from(".nav__element--lien", {
+    y: "100%",
+    delay: 0.3,
+    stagger: 0.15,
+    duration: 0.3,
+})
+
+if(burger){
+    menuButton.addEventListener('click', () => {
+        burger.reversed() ? burger.play() : burger.reverse();
+    })
+}
+
+let items = document.querySelectorAll(".nav__element--lien"),
+    actif = Array.prototype.indexOf.call(items, document.querySelector(".nav__element--actif")),
+    index;
+
+if(items){
+    for(let i = 0; i < items.length; i++){
+        items[i].addEventListener("mouseenter", enter);
+        items[i].addEventListener("mouseleave", leave);
+    }
+}
+
+gsap.set(".number__element",{
+    yPercent: actif * -100
+});
+
+function enter(){
+    index = Array.prototype.indexOf.call(items, this);
+
+    gsap.to(".number__element",{
+        yPercent: index * -100,
+        ease: "power2.out"
+    });
+}
+
+function leave(){
+    gsap.to(".number__element",{
+        yPercent: actif * -100,
+        ease: "power2.out"
+    });
+}
+
+if(btnNext){
+    btnNext.addEventListener("click", counter69);
+    btnPrev.addEventListener("click", counter69);
+
+    counter69();
+}
+
+function counter69(){
+    let counters = document.querySelectorAll(".slider__element--show .caracteristique__number");
+
+    counters.forEach(function(count) {
+        let target = { val:0 },
+            num = count.dataset.number,
+            split = (num + "").split("."),
+            decimals = split.length > 1 ? split[1].length : 0;
+        
+        gsap.to(target, {
+            duration: 1.2,
+            val: num,
+            ease: 'power4.out',
+            onUpdate: () => {
+                count.innerText = Number(target.val).toFixed(decimals);
+            }
+        })
+    });
+}

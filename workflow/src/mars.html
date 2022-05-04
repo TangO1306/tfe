@@ -30,17 +30,21 @@
 	</head>
 	<body>
 		<header class="header">
-            <div class="menu">
+			<div class="menu">
 				<a href="index.html"><img class="menu__logo" src="assets/images/logo.svg" alt="logo"></a>
 				<button class="btn btn--menu"><span class="menu__text">Menu</span><img class="menu__img" src="assets/images/burger-menu.svg" alt="bouton menu"></button>
 			</div>
-            <nav class="nav">
-                <ul class="nav__list">
-                <li class="nav__element"><a class="nav__element--lien" href="mars.html">Mars</a></li>
-                <li class="nav__element"><a class="nav__element--lien" href="mission.html">Mission</a></li>
-                <li class="nav__element"><a class="nav__element--lien" href="rover.html">Rover</a></li>
-                </ul>
-            </nav>
+			<div class="grid">
+				<div class="container">
+					<nav class="nav">
+						<ul class="list nav__list">
+							<li class="nav__element"><a class="nav__element--lien" href="mars.html">Mars</a></li>
+							<li class="nav__element"><a class="nav__element--lien" href="mission.html">Mission</a></li>
+							<li class="nav__element"><a class="nav__element--lien" href="rover.html">Rover</a></li>
+						</ul>
+					</nav>
+				</div>
+			</div>
 		</header>
 		<main>
             <div class="lines">
@@ -49,18 +53,11 @@
 				<div class="line line-3"></div>
 				<div class="line line-4"></div>
 			</div>
-			<section class="section section--mars">
+			<section class="section section--mars section--dark">
 				<div class="container">
 					<div class="test1">
 						<svg class="svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000">
 							<image transform="matrix(1.25 0 0 1.25 250 250)" xlink:href="assets/images/mars.png"/>
-							<g class="phobos">
-								<circle class="orbit" cx="500" cy="500" r="350"/>
-								<g>
-									<circle class="circle" cx="252.87" cy="252.87" r="13"/>
-									<circle class="moon" cx="252.87" cy="252.87" r="9"/>
-								</g>
-							</g>
 							<g class="deimos">
 								<circle class="orbit" cx="500" cy="500" r="450"/>
 								<g>
@@ -68,8 +65,229 @@
 									<circle class="moon" cx="182.15" cy="182.15" r="12"/>
 								</g>
 							</g>
+							<g class="phobos">
+								<circle class="orbit" cx="500" cy="500" r="350"/>
+								<g>
+									<circle class="circle" cx="252.87" cy="252.87" r="13"/>
+									<circle class="moon" cx="252.87" cy="252.87" r="9"/>
+								</g>
+							</g>
 						</svg>
 					</div>
+					<div class="slider">
+						<h2 class="title title--medium">Caractéristiques</h2>
+						<ul class="list slider__list">
+							<ul class="list slider__element slider__element--show">
+								<ul class="list caracteristique__list">
+									<li class="caracteristique__left">
+										<h4 class="title title--small">Diamètre</h4>
+										<span class="caracteristique__number" data-number="6792">6792</span>
+										<span class="caracteristique__unit">kilomètres</span>
+									</li>
+									<li class="caracteristique__center">
+										<img src="assets/images/diametre.svg" alt="diametre">
+										<span><span>53,2</span>%</span>
+									</li>
+									<li class="caracteristique__right">
+										<h4 class="title title--small">Diamètre</h4>
+										<span class="caracteristique__number" data-number="12756">12756</span>
+										<span class="caracteristique__unit">kilomètres</span>
+									</li>
+								</ul>
+								<ul class="list caracteristique__list">
+									<li class="caracteristique__left">
+										<h4 class="title title--small">Surface</h4>
+										<span class="caracteristique__number" data-number="144.8">144.8</span>
+										<span class="caracteristique__unit">millions km²</span>
+									</li>
+									<li class="caracteristique__center">
+										<img src="assets/images/surface.svg" alt="surface">
+										<span><span>28,4</span>%</span>
+									</li>
+									<li class="caracteristique__right">
+										<h4 class="title title--small">Surface</h4>
+										<span class="caracteristique__number" data-number="510.1">510.1</span>
+										<span class="caracteristique__unit">millions km²</span>
+									</li>
+								</ul>
+								<ul class="list caracteristique__list">
+									<li class="caracteristique__left">
+										<h4 class="title title--small">Distance du Soleil</h4>
+										<span class="caracteristique__number" data-number="227.9">227.9</span>
+										<span class="caracteristique__unit">millions km</span>
+									</li>
+									<li class="caracteristique__center">
+										<img src="assets/images/distance.svg" alt="distance du soleil">
+										<span><span>152,4</span>%</span>
+									</li>
+									<li class="caracteristique__right">
+										<h4 class="title title--small">Distance du Soleil</h4>
+										<span class="caracteristique__number" data-number="149.6">149.6</span>
+										<span class="caracteristique__unit">millions km</span>
+									</li>
+								</ul>
+							</ul>
+							<ul class="list slider__element">
+								<ul class="list caracteristique__list">
+									<li class="caracteristique__left">
+										<h4 class="title title--small">Volume</h4>
+										<span class="caracteristique__number" data-number="163">163</span>
+										<span class="caracteristique__unit">milliards km³</span>
+									</li>
+									<li class="caracteristique__center">
+										svg
+										<span><span>53,2</span>%</span>
+									</li>
+									<li class="caracteristique__right">
+										<h4 class="title title--small">Volume</h4>
+										<span class="caracteristique__number" data-number="1083">1083</span>
+										<span class="caracteristique__unit">milliards km³</span>
+									</li>
+								</ul>
+								<ul class="list caracteristique__list">
+									<li class="caracteristique__left">
+										<h4 class="title title--small">Masse</h4>
+										<span class="caracteristique__number" data-number="642">642</span>
+										<span class="caracteristique__unit">trillions kg</span>
+									</li>
+									<li class="caracteristique__center">
+										svg
+										<span><span>53,2</span>%</span>
+									</li>
+									<li class="caracteristique__right">
+										<h4 class="title title--small">Masse</h4>
+										<span class="caracteristique__number" data-number="5973">5973</span>
+										<span class="caracteristique__unit">trillions kg</span>
+									</li>
+								</ul>
+								<ul class="list caracteristique__list">
+									<li class="caracteristique__left">
+										<h4 class="title title--small">Gravité</h4>
+										<span class="caracteristique__number" data-number="3.71">3.71</span>
+										<span class="caracteristique__unit">mètre/seconde²</span>
+									</li>
+									<li class="caracteristique__center">
+										svg
+										<span><span>53,2</span>%</span>
+									</li>
+									<li class="caracteristique__right">
+										<h4 class="title title--small">Gravité</h4>
+										<span class="caracteristique__number" data-number="9.78">9.78</span>
+										<span class="caracteristique__unit">mètre/seconde²</span>
+									</li>
+								</ul>
+							</ul>
+							<ul class="list slider__element">
+								<ul class="list caracteristique__list">
+									<li class="caracteristique__left">
+										<h4 class="title title--small">Température</h4>
+										<div><span class="caracteristique__number" data-number="-143">-143</span> à <span class="caracteristique__number" data-number="20">20</span></div>
+										<span class="caracteristique__unit">degrés Celsius</span>
+									</li>
+									<li class="caracteristique__center">
+										svg
+										<span><span>53,2</span>%</span>
+									</li>
+									<li class="caracteristique__right">
+										<h4 class="title title--small">Température</h4>
+										<div><span class="caracteristique__number" data-number="-89">-89</span> à <span class="caracteristique__number" data-number="58">58</span></div>
+										<span class="caracteristique__unit">degrés Celsius</span>
+									</li>
+								</ul>
+								<ul class="list caracteristique__list">
+									<li class="caracteristique__left">
+										<h4 class="title title--small">Révolution</h4>
+										<span class="caracteristique__number" data-number="686">686</span>
+										<span class="caracteristique__unit">jours</span>
+									</li>
+									<li class="caracteristique__center">
+										svg
+										<span><span>53,2</span>%</span>
+									</li>
+									<li class="caracteristique__right">
+										<h4 class="title title--small">Révolution</h4>
+										<span class="caracteristique__number" data-number="365">365</span>
+										<span class="caracteristique__unit">jours</span>
+									</li>
+								</ul>
+								<ul class="list caracteristique__list">
+									<li class="caracteristique__left">
+										<h4 class="title title--small">Rotation</h4>
+										<span class="caracteristique__number" data-number="24.65">24.65</span>
+										<span class="caracteristique__unit">heures</span>
+									</li>
+									<li class="caracteristique__center">
+										svg
+										<span><span>53,2</span>%</span>
+									</li>
+									<li class="caracteristique__right">
+										<h4 class="title title--small">Rotation</h4>
+										<span class="caracteristique__number" data-number="24">24</span>
+										<span class="caracteristique__unit">heures</span>
+									</li>
+								</ul>
+							</ul>
+						</ul>
+						<ul class="list slider__control">
+							<li class="slider__btn slider__btn--prev"><button class="btn"><img style="transform: rotate(180deg); width: 32px;"src="assets/images/arrow.svg" alt="arrow"></button></li>
+            				<li class="slider__btn slider__btn--next"><button class="btn"><img style="width: 32px;"src="assets/images/arrow.svg" alt="arrow"></button></li>
+							<li style="color: white;"><span class="counter1">01</span> — 03</li>
+						</ul>
+						<style>
+							.slider__control{
+								display: flex;
+								gap: 24px;
+							}
+						</style>
+					</div>
+					<!--<h2 class="title title--medium">Caractéristiques</h2>
+					<div class="caracteristique__left">
+						<h4 class="title title--small">Diamètre</h4>
+						<span class="caracteristique__number">6792</span>
+						<span class="caracteristique__unit">kilomètres</span>
+					</div>
+					<div class="caracteristique__center">
+						svg
+						<span><span>53,2</span>%</span>
+					</div>
+					<div class="caracteristique__right">
+						<h4 class="title title--small">Diamètre</h4>
+						<span class="caracteristique__number">6792</span>
+						<span class="caracteristique__unit">kilomètres</span>
+					</div>
+					<div class="caracteristique__left">
+						<h4 class="title title--small">Surface</h4>
+						<span class="caracteristique__number">6792</span>
+						<span class="caracteristique__unit">kilomètres</span>
+					</div>
+					<div class="caracteristique__center">
+						svg
+						<span><span>53,2</span>%</span>
+					</div>
+					<div class="caracteristique__right">
+						<h4 class="title title--small">Surface</h4>
+						<span class="caracteristique__number">6792</span>
+						<span class="caracteristique__unit">kilomètres</span>
+					</div>
+					<div class="caracteristique__left">
+						<h4 class="title title--small">Distance Soleil</h4>
+						<span class="caracteristique__number">6792</span>
+						<span class="caracteristique__unit">kilomètres</span>
+					</div>
+					<div class="caracteristique__center">
+						svg
+						<span><span>53,2</span>%</span>
+					</div>
+					<div class="caracteristique__right">
+						<h4 class="title title--small">Distance Soleil</h4>
+						<span class="caracteristique__number">6792</span>
+						<span class="caracteristique__unit">kilomètres</span>
+					</div>
+					<div>
+						<button class="prev">Previous</button>
+						<button class="next">Next</button>
+						<span class="pagination"><span class="currentNumber">01 </span>— 07</span>
+					</div>-->
 					<div class="test2">
 						<svg class="svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000">
 							<image transform="matrix(1.25 0 0 1.25 250 250)" xlink:href="assets/images/terre.png"/>
@@ -81,6 +299,45 @@
 								</g>
 							</g>
 						</svg>
+					</div>
+				</div>
+			</section>
+			<section class="section section--dark">
+				<div class="container">
+					<h2 class="title title--medium mars__1">Mars, autrefois jumelle de la Terre</h2>
+					<div class="mars__2">
+						<p class="bold">Mars est la quatrième planète de notre Système solaire qui présente des caractéristiques et des conditions assez proches de celles de la Terre. Elle est la planète rocheuse la plus éloignée du Soleil et située dans la zone habitable tout comme la Terre, une zone où la température est ni trop faible ni trop élevée pour que la vie soit&nbsp;possible.</p>
+						<p>Le champ magnétique est provoqué par le mouvement du liquide majoritairement métallique du noyau. Il agit comme une aimant tournant dans une dynamo, plus l’aimant tourne vite, plus le champ magnétique est puissant. Ce phénomène a été bouleversé, il y a 4 milliards d'années, par le grand bombardement tardif, une pluie de météorites et une forte activité volcanique. Cela a eu pour effet de ralentir ce phénomène et donc de faire disparaître le champ magnétique qui protège la&nbsp;planète.</p>
+						<p>La magnétosphère se dissipant, crée un effet boule de neige qui entraîne avec elle l’atmosphère alors soufflée par les vents solaires. La température chute et l’eau à l’état liquide se transforme en glace rendant dorénavant impossible la vie sur Mars. Les conditions martiennes sont donc passées d'une atmosphère épaisse, humide et tempérée à une atmosphère ténue, aride et&nbsp;froide.</p>
+					</div>
+					<div class="mars__3">
+
+					</div>
+					<div class="mars__4">
+						
+					</div>
+					<div class="mars__5">
+						<p>Il y a 3 milliards d’années, Mars n’était pas du tout rouge, sa couleur rouille caractéristique est apparue lorsque la planète ne possédait plus d’atmosphère qui a alors lentement oxydé le fer, présent en grande quantité à sa&nbsp;surface.</p>
+						<p>Le noyau de Mars reste visiblement assez chaud étant donné qu'une activité volcanique a pu être observée récemment. Sur Mars, les volcans ont la particularité d’atteindre des tailles gigantesques comparé à leurs équivalents terrestres en raison de l'absence de tectonique des plaques. Par exemple, Olympus Mons culmine à plus de 22,5 kilomètres d’altitude, le plus haut sommet du Système solaire et Alba Mons,  s'étend sur environ 1600 kilomètres de&nbsp;large.</p>
+					</div>
+					<h2 class="title title--medium mars__6">L’intérêt d’explorer cette planète</h2>
+					<div class="mars__7">
+						<p>Aux alentours des années 1970, au début de l’ère spatiale, les premières explorations en orbite avec Mariner 4 et sur le sol martien avec les sondes Viking, anéantissent les espérances des scientifiques en découvrant l’absence d’atmosphère dense et donc d’eau liquide nécessaire au développement de la&nbsp;vie.</p>
+						<p>Mais dans les années 2000, l’espoir renaît suite à la découverte de dépôts sédimentaires et d’argile qui n’ont pu apparaître qu’en présence d’eau à l’état liquide ainsi que d’énormes quantités de glace. Ces éléments témoignent que Mars à connu une période chaude où l’eau était&nbsp;liquide.</p>
+						<p>Plus tard, grâce au mini-laboratoire du rover Curiosity, les scientifiques ont découvert des molécules organiques complexes mais aucune biosignature, indice direct de présence de vie. Ceci pourrait s’expliquer par l’absence de champ magnétique permettant alors aux rayons cosmiques de casser les molécules&nbsp;complexes.</p>
+					</div>
+					<div class="mars__8">
+						<p class="bold">L’exploration de Mars est une destination importante dans les programmes scientifiques. Etant donné que la planète se trouve relativement proche de la Terre, cela permet d’y envoyer facilement des modules spatiaux qui nous permettraient non seulement d’étudier cette planète mais aussi de mieux comprendre la nôtre en répondant à trois questions :</p>
+					</div>
+					<div class="mars__9">
+						<ol>
+							<li>comprendre la formation de la planète et son évolution;</li>
+							<li>remonter l’histoire de son climat;</li>
+							<li>savoir si elle a abritée la vie dans le passé.</li>
+						</ol>
+					</div>
+					<div class="mars__10">
+						
 					</div>
 				</div>
 			</section>

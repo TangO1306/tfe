@@ -1,3 +1,5 @@
+@import '~normalize.css/normalize.css';
+
 @import 'utils/animation';
 @import 'utils/grid';
 @import 'utils/title';
@@ -22,12 +24,6 @@ html{
     font-family: 'Inter', sans-serif;
   }
   
-  ul{
-    padding: 0;
-    margin: 0;
-    list-style: none;
-  }
-  
   ::selection{
     color: $white;
     background: $orange;
@@ -49,6 +45,8 @@ html{
 
   .list{
     list-style: none;
+    padding: 0;
+    margin: 0;
   }
 
   .no-repeat{
@@ -70,6 +68,7 @@ html{
     display: flex;
     justify-content: center;
     align-items: center;
+
     .logo{
       color: $white;
       font-weight: bold;
@@ -128,7 +127,6 @@ html{
       background-color: $black;
       height: 100vh;
 
-
       .container{
         margin-top: 144px;
         height: 100%;
@@ -139,15 +137,41 @@ html{
         background-blend-mode: darken;
       }
     }
+
+    &--dark{
+      background-color: $black;
+  
+      .title{
+        color: $white;
+      }
+  
+      p{
+        color: $lightgrey;
+      }
+  
+      .bold{
+        color: $white;
+      }
+    }
+  
+    &--light{
+      background-color: $white;
+    }
+  }
+
+  p{
+    color: $darkgrey;
+    margin: 0 0 24px;
+  }
+
+  .bold{
+    color: $black;
+    font-weight: 600;
+    margin-bottom: 48px;
   }
   
   .img{
-    //position: absolute;
     width: 100%;
-    //left: 0;
-    //right: 0;
-    //bottom: 0;
-    //margin: 0 auto;
   }
   
   .container{
@@ -242,7 +266,6 @@ html{
   }
   
   .btn--more{
-    //background-color: $white;
     border: 2px solid $white;
     height: 42px;
     width: 42px;
@@ -261,11 +284,10 @@ html{
     display: inline-block;
     left: 0;
     right: 0;
-    //margin: 0 auto;
     text-transform: uppercase;
-    letter-spacing: 6px;
+    letter-spacing: 3px;
     font-weight: 600;
-    //transform: rotate(-90deg);
+    transform: rotate(-90deg);
   }
   
   .current-page::before{
@@ -279,11 +301,20 @@ html{
   }
   
   .outline{
-    font-size: 100px;
+    font-size: $xxlDesktop;
     font-weight: 600;
     text-transform: uppercase;
     color: transparent;
     -webkit-text-stroke: 2px $orange;
+  }
+
+  .rover{
+    position: relative;
+    z-index: 9;
+  }
+
+  .title--tabs{
+    margin: 0;
   }
   
   .actif [data-name="Stroke"]{
@@ -298,6 +329,7 @@ html{
   .tabs{
     background-color: $black;
     color: $lightgrey;
+    margin: 192px 96px;
   }
   
   .canvas{
@@ -319,8 +351,15 @@ html{
     &--instrument{
       display: flex;
       color: $lightgrey;
-      font-size: 18px;
       padding: 12px 0;
+    }
+
+    &--menu{
+      display: flex;
+      gap: 12px;
+      align-items: center;
+      z-index: 12;
+      padding: 18px 0;
     }
   }
 
@@ -428,26 +467,114 @@ html{
   .orbit{
     stroke: $darkgrey;
     stroke-dasharray:6;
-    fill:none;
+    fill:transparent;
   }
 
   .svg{
-    height: 100%;
+    height: 80vh;
   }
 
   .section--mars{
-    background-color: #080808;
+    background-color: $black;
 
-    .container{
-      display: grid;
-      grid-template-columns: repeat(9, 1fr);
+    .title--medium{
+      text-align: center;
     }
   }
 
-  .test1{
-    grid-column: 1 / 5;
+  .deimos:hover .phobos{
+    opacity: 0.5;
   }
 
-  .test2{
-    grid-column: 6 / 10;
+  .phobos:hover .deimos{
+    opacity: 0.5;
   }
+
+  .caracteristique{
+    &__list{
+      margin-bottom: 48px;
+    }
+
+    &__number{
+      font-size: $lgDesktop;
+      font-weight: 600;
+      line-height: $lineheightTitle;
+    }
+
+    &__unit{
+      font-weight: 600;
+      color: $lightgrey;
+      display: block;
+    }
+
+    &__center{
+      margin: 0 12px;
+    }
+
+    &__left{
+      .caracteristique__number{
+        color: $orange;
+      }
+    }
+
+    &__right{
+      text-align: right;
+
+      .caracteristique__number{
+        color: $blue;
+      }
+    }
+  }
+
+ol{
+  list-style-type: none;
+  counter-reset: li;
+  margin: 0;
+  padding: 0;
+    
+  li:before {
+    counter-increment: li;
+    content: counter(li, decimal-leading-zero);
+    font-weight: 600;
+    margin-right: 12px;
+  }
+}
+
+.slider{
+  &__element{
+    display: none;
+
+    &--show{
+      display: block;
+    }
+  }
+}
+
+.image{
+  margin: 0;
+  position: relative;
+  z-index: 9;
+
+  &__content{
+      width: 100%;
+  }
+
+  &__mask{
+    display: flex;
+  }
+
+  &__subtitle{
+      margin-left: 12px;
+      font-size: $fontsizeImage;
+      font-family: "Be Vietnam Pro", sans-serif;
+      
+      &--bold{
+          letter-spacing: 1px;
+          text-transform: uppercase;
+          font-weight: 600;
+          border-right: 2px solid $black;
+          padding-right: 6px;
+          margin-right: 6px;
+      }
+  }
+}

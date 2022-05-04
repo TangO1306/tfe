@@ -4,16 +4,29 @@ $darkgrey: #474747;
 $lightgrey: #B8B8B8;
 $white: #FFF;
 $orange: #D44421;
+$blue: #2BBBDE;
 
 $lineheightTitle: 1;
-$lineheightContent: 1.7;
+$lineheightContent: 1.6;
+$fontsizeImage: 1.4rem;
 
-$rapportMobile: 1.2;
+$rapportMobile: 1.236;
 $fontsizeMobile: 1.6rem;
 
-$rapportDesktop: 1.2;
+$smMobile: $fontsizeMobile * $rapportMobile;
+$mdMobile: $fontsizeMobile * $rapportMobile * $rapportMobile * $rapportMobile;
+$lgMobile: $fontsizeMobile * $rapportMobile * $rapportMobile * $rapportMobile * $rapportMobile * $rapportMobile;
+$xlMobile: $fontsizeMobile * $rapportMobile * $rapportMobile * $rapportMobile * $rapportMobile * $rapportMobile * $rapportMobile * $rapportMobile;
+$xxlMobile: $fontsizeMobile * $rapportMobile * $rapportMobile * $rapportMobile * $rapportMobile * $rapportMobile * $rapportMobile * $rapportMobile * $rapportMobile;
+
+$rapportDesktop: 1.236;
 $fontsizeDesktop: 1.8rem;
-$fontsizeImage: 1.4rem;
+
+$smDesktop: $fontsizeDesktop * $rapportDesktop;
+$mdDesktop: $fontsizeDesktop * $rapportDesktop * $rapportDesktop * $rapportDesktop;
+$lgDesktop: $fontsizeDesktop * $rapportDesktop * $rapportDesktop * $rapportDesktop * $rapportDesktop * $rapportDesktop;
+$xlDesktop: $fontsizeDesktop * $rapportDesktop * $rapportDesktop * $rapportDesktop * $rapportDesktop * $rapportDesktop * $rapportDesktop * $rapportDesktop;
+$xxlDesktop: $fontsizeDesktop * $rapportDesktop * $rapportDesktop * $rapportDesktop * $rapportDesktop * $rapportDesktop * $rapportDesktop * $rapportDesktop * $rapportDesktop;
 
 button{
   font-size: $fontsizeMobile;
@@ -24,19 +37,19 @@ p{
 }
 
 .title--small{
-  font-size: $fontsizeMobile * $rapportMobile;
+  font-size: $smMobile;
 }
 
 .title--medium{
-  font-size: $fontsizeMobile * $rapportMobile * $rapportMobile * $rapportMobile;
+  font-size: $mdMobile;
 }
 
 .title--large{
-  font-size: $fontsizeMobile * $rapportMobile * $rapportMobile * $rapportMobile * $rapportMobile * $rapportMobile;
+  font-size: $lgMobile;
 }
 
 .title--extralarge{
-  font-size: $fontsizeMobile * $rapportMobile * $rapportMobile * $rapportMobile * $rapportMobile * $rapportMobile * $rapportMobile * $rapportMobile;
+  font-size: $xlMobile;
 }
 
 @media(min-width : 767px){
@@ -45,18 +58,18 @@ p{
   }
 
   .title--small{
-    font-size: $fontsizeDesktop * $rapportDesktop;
+    font-size: $smDesktop;
   }
 
   .title--medium{
-    font-size: $fontsizeDesktop * $rapportDesktop * $rapportDesktop * $rapportDesktop;
+    font-size: $mdDesktop;
   }
 
   .title--large{
-    font-size: $fontsizeDesktop * $rapportDesktop * $rapportDesktop * $rapportDesktop * $rapportDesktop * $rapportDesktop;
+    font-size: $lgDesktop;
   }
 
   .title--extralarge{
-    font-size: $fontsizeDesktop * $rapportDesktop * $rapportDesktop * $rapportDesktop * $rapportDesktop * $rapportDesktop * $rapportDesktop * $rapportDesktop;
+    font-size: $xlDesktop;
   }
 }

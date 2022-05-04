@@ -32,13 +32,6 @@
   }
 }
 
-.btn--menu{
-  display: flex;
-  gap: 12px;
-  align-items: center;
-  z-index: 12;
-}
-
 .grid{
   background-blend-mode: normal;
   position: fixed;
@@ -66,16 +59,22 @@
     display: inline-block;
 
     &--lien{
-      font-size: $fontsizeDesktop * $rapportDesktop * $rapportDesktop * $rapportDesktop * $rapportDesktop * $rapportDesktop;
+      font-size: $lgDesktop;
       color: $white;
       text-decoration: none;
       text-transform: uppercase;
       font-weight: 700;
       display: inline-block;
+      font-family: "Be Vietnam Pro", sans-serif;
 
       &:hover{
-        color: $darkgrey;
+        color: $lightgrey;
       }
+    }
+
+    &--actif{
+      color: transparent;
+      -webkit-text-stroke: 1px $white;
     }
   }
 }
@@ -90,4 +89,19 @@ body[data-menu]{
       right: 0vw;
       //transition: right .3s ease-out;
     }
+}
+
+.contenu__hidden{
+  overflow: hidden;
+  height: $xxlDesktop;
+  display: flex;
+  color: $orange;
+  font-weight: 900;
+  font-size: $xxlDesktop;
+  line-height: $lineheightTitle;
+}
+
+.contenu__hidden span{
+  margin: 0;
+  padding: 0;
 }
