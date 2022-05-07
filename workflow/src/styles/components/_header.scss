@@ -2,6 +2,7 @@
 
 .header{
   position: fixed;
+  top: 0;
   width: 100%;
   mix-blend-mode: difference;
   z-index: 10;
@@ -13,22 +14,18 @@
   align-items: center;
   margin: 48px 96px 0 96px;
 
-  &__logo{
-    margin: 12px 0;
-    height: 24px;
+  a{
+    display: flex;
   }
 
-  &__text{
-    color: $white;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    font-weight: 600;
-    font-size: $fontsizeImage;
+  &__logo{
+    padding: 12px 0;
+    height: 24px;
   }
 
   &__img{
     width: 24px;
-    padding: auto 0;
+    padding: 12px 0 12px 24px;
   }
 }
 

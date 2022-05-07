@@ -32,23 +32,34 @@
 		<header class="header">
 			<div class="menu">
 				<a href="index.html"><img class="menu__logo" src="assets/images/logo.svg" alt="logo"></a>
-				<button class="btn btn--menu"><span class="menu__text">Menu</span><img class="menu__img" src="assets/images/burger-menu.svg" alt="bouton menu"></button>
+				<button class="btn btn--menu"><img class="menu__img" src="assets/images/burger-menu.svg" alt="bouton menu"></button>
 			</div>
 			<div class="grid">
 				<div class="container">
 					<nav class="nav">
 						<ul class="list nav__list">
+							<li class="nav__element"><span><a class="nav__element--lien nav__element--actif" href="index.html">Home</a></span></li>
 							<li class="nav__element"><a class="nav__element--lien" href="mars.html">Mars</a></li>
 							<li class="nav__element"><a class="nav__element--lien" href="mission.html">Mission</a></li>
 							<li class="nav__element"><a class="nav__element--lien" href="rover.html">Rover</a></li>
 						</ul>
 					</nav>
+					<div class="contenu__hidden">
+						<span>0</span>
+						<ul class="list number__list">
+							<li class="number__element">1</li>
+							<li class="number__element">2</li>
+							<li class="number__element">3</li>
+							<li class="number__element">4</li>
+						</ul>
+					</div>
 				</div>
 			</div>
 		</header>
 		<main>
             <section class="section section--mission">
                 <div class="container">
+					<img class="mission__bg" src="assets/images/atlas-V.jpg" alt="atlas-V">
                     <h1 class="title title--extralarge">
 						<span class="hidden">
 							<span>La</span>

@@ -43,16 +43,13 @@ function removeAnchor() {
 // Burger menu
 
 let menuButton = document.querySelector(".btn--menu");
-let menuText = document.querySelector(".menu__text");
 menuButton.addEventListener("click", toggleNavigation);
 let menuImage = document.querySelector(".menu__img");
 function toggleNavigation(){
     if(document.body.hasAttribute("data-menu")){
-        menuText.innerHTML = "Menu";
         document.body.removeAttribute("data-menu");
         menuImage.setAttribute("src", "assets/images/burger-menu.svg");
     }else{
-        menuText.innerHTML = "Fermer";
         document.body.setAttribute("data-menu", true);
         menuImage.setAttribute("src", "assets/images/croix.svg");
     }
@@ -65,43 +62,43 @@ const content = [
         titre: "Mastcam-Z",
         nombre: "01 ",
         liste: ["4 kg", "17.4 W", "18,5 Mo"],
-        description: "Le système de caméra principale possède deux objectifs capables de zoomer, de faire des photos panoramiques et des vidéos 3D à grande vitesse pour capter une vue d’ensemble du paysage martien. Ses yeux aident à comprendre le terrain autour du rover pour identifier d’anciens lacs, ruisseaux mais aussi observer les phénomènes astronomiques, météorologiques comme les tourbillons de poussière et les déplacements du rover.",
+        description: "Le système de caméra principale possède deux objectifs capables de faire des photos panoramiques et des vidéos 3D pour capter une vue d’ensemble du paysage martien. Ses yeux aident à comprendre le terrain autour du rover pour identifier d’anciens lacs, ruisseaux mais aussi observer les phénomènes astronomiques, météorologiques et les déplacements du&nbsp;rover.",
     },
     {
         titre: "MEDA",
         nombre: "02 ",
         liste: ["5.5 kg", "17 W", "11 Mo"],
-        description: "Comme une station météorologique, il enregistre les différents paramètres atmosphériques de Mars à l’aide de capteurs répartis sur l’ensemble de l’astromobile. Il mesure entre autres la température, la vitesse et la direction du vent, la pression, l’humidité et surveille aussi la quantité de poussière dans l’air qui pourrait endommager les instruments du véhicule.",
+        description: "Comme une station météorologique, il enregistre les différents paramètres atmosphériques de Mars à l’aide de capteurs répartis sur l’ensemble de l’astromobile. Il mesure entre autres la température, la vitesse et la direction du vent, la pression, l’humidité et surveille aussi la quantité de poussière dans l’air qui pourrait endommager les instruments du&nbsp;véhicule.",
     },
     {
         titre: "PIXL",
         nombre: "03 ",
         liste: ["6.9 kg", "25 W", "2 Mo"],
-        description: "Le spectromètre à rayons X analyse et identifie les divers éléments chimiques que compose la roche sur Mars. Il dispose également d’un appareil photo capable de prendre des photos très détaillées des textures de la roche. Ces deux outils réunis recherchent de possibles signes de vie passée, laissées par les bactéries sur les minéraux.",
+        description: "Le spectromètre à rayons X analyse et identifie les divers éléments chimiques que compose la roche sur Mars. Il dispose également d’un appareil photo capable de prendre des photos très détaillées des textures de la roche. Ces deux outils réunis recherchent de possibles signes de vie passée, laissées par les bactéries sur les&nbsp;minéraux.",
     },
     {
         titre: "RIMFAX",
         nombre: "04 ",
         liste: ["3 kg", "7.5 W", "10 Mo"],
-        description: "Le géoradar sonde les couches géologiques jusqu’à 10 mètres de profondeur. Grâce aux ondes réfléchies dans le sol, il peut détecter la présence de glace, de roche, de sable ou même de l’eau à l’état liquide. Il sert à associer les informations sur la stratigraphie que compose le sous-sol de la planète rouge aux échantillons prélevés dans une même zone.",
+        description: "Le géoradar sonde les couches géologiques jusqu’à 10 mètres de profondeur. Grâce aux ondes réfléchies dans le sol, il peut détecter la présence de glace, de roche, de sable ou même de l’eau à l’état liquide. Il sert à associer les informations sur la stratigraphie que compose le sous-sol de la planète rouge aux échantillons prélevés dans une même&nbsp;zone.",
     },
     {
         titre: "SHERLOC",
         nombre: "05 ",
         liste: ["4.7 kg", "48.8 W", "10 Mo"],
-        description: "Les spectromètres et le laser identifient les minéraux, les matières organiques et les biosignatures, une trace physique ou chimique qui sont des indices potentiels d’une forme de vie passée. Il est aussi équipé de la caméra WATSON et transporte de petits échantillons de combinaison spatiale (prévue pour une future exploration humaine) afin de tester leur résistance dans le dur environnement martien. La caméra les cible pour étalonner la caméra et les spectromètres.",
+        description: "Les spectromètres et le laser identifient les minéraux, les matières organiques et les biosignatures, une trace physique ou chimique qui sont des indices potentiels d’une forme de vie passée. Il est aussi équipé de la caméra WATSON et transporte de petits échantillons de combinaison spatiale (prévue pour une future exploration humaine) afin de tester leur résistance dans le dur environnement&nbsp;martien.",
     },
     {
         titre: "SuperCam",
         nombre: "06 ",
         liste: ["10.6 kg", "17.9 W", "0.5 Mo"],
-        description: "Les spectromètres et le laser examinent le sol et les roches pour obtenir leur composition chimique, moléculaire et atomique. Sa super vision lui permet de distinguer les éléments de la poussière qui pourraient être nocifs pour les humains et trouver des éléments qui se sont altérés ou érodés dans l’eau. Il dispose aussi d’un microphone pour pouvoir écouter l’environnement martien et améliorer leur analyse en fonction du son émis par le laser.",
+        description: "Les spectromètres et le laser examinent le sol et les roches pour obtenir leur composition chimique, moléculaire et atomique. Sa super vision lui permet de distinguer les éléments de la poussière qui pourraient être nocifs pour les humains et trouver des éléments qui se sont altérés ou érodés dans l’eau. Il dispose aussi d’un microphone pour pouvoir écouter l’environnement martien et améliorer leur analyse en fonction du son émis par le&nbsp;laser.",
     },
     {
         titre: "MOXIE",
         nombre: "07 ",
         liste: ["17.1 kg", "300 W", "10g d'oxygène"],
-        description: "Le prototype produit de l’oxygène à partir de l’atmosphère martienne composé principalement de dioxyde de carbone. Il doit pouvoir démontrer un moyen de produire de l’oxygène de manière autonome pour la respiration et le propulseur afin de se préparer dans le futur à l’exploration humaine de Mars.",
+        description: "Le prototype produit de l’oxygène à partir de l’atmosphère martienne composé principalement de dioxyde de carbone. Il doit pouvoir démontrer un moyen de produire de l’oxygène de manière autonome pour la respiration et le propulseur afin de se préparer dans le futur à l’exploration humaine de&nbsp;Mars.",
     }
 ];
 
@@ -304,21 +301,19 @@ tl.to(".img", {
     delay: -1.2
 });
 
-tl.from(".title--extralarge", {
+/*tl.from(".title--extralarge", {
     opacity: 0,
     y: "-50%",
     duration: 1.2
-})
+})*/
 
-window.addEventListener( 'click', () => { 
-    tl.restart(); 
-}, false );
+const intro = document.querySelector(".section--intro");
 
-const space = document.querySelector(".section--intro");
-
-document.addEventListener("mousemove", function(e){
-    parallax(e, ".section--intro", -20);
-});
+if(intro){
+    document.addEventListener("mousemove", function(e){
+        parallax(e, ".section--intro", -20);
+    });
+}
   
 function parallax(e, target, movement) {
     let intro = document.querySelector(".section--intro");
@@ -335,17 +330,20 @@ function parallax(e, target, movement) {
 
 const deimos = document.querySelector(".deimos");
 const phobos = document.querySelector(".phobos");
+const lune = document.querySelector(".lune");
 
 if(deimos){
     deimos.addEventListener("mouseenter", enterDeimos);
     phobos.addEventListener("mouseenter", enterPhobos);
+    lune.addEventListener("mouseenter", enterLune);
 
     deimos.addEventListener("mouseleave", leaveDeimos);
     phobos.addEventListener("mouseleave", leavePhobos);
+    lune.addEventListener("mouseleave", leaveLune);
 }
 
 function enterDeimos(){
-    phobos.style.opacity="0.33";
+    phobos.style.opacity="0.25";
 }
 
 function leaveDeimos(){
@@ -353,11 +351,19 @@ function leaveDeimos(){
 }
 
 function enterPhobos(){
-    deimos.style.opacity="0.33";
+    deimos.style.opacity="0.25";
 }
 
 function leavePhobos(){
     deimos.style.opacity="1";
+}
+
+function enterLune(){
+
+}
+
+function leaveLune(){
+    
 }
 
 gsap.to(".deimos", {
@@ -384,18 +390,13 @@ gsap.to(".lune", {
     transformOrigin: "50% 50%"
 });
 
-const tween = gsap.from(".hidden span", {
+gsap.from(".hidden span", {
     ease: "power4.out",
     y: "100%",
     stagger: 0.2,
     duration: 0.8,
-    delay: 0.4,
     scrollTrigger: ".hidden span"
 });
-
-window.addEventListener( 'click', () => { 
-    tween.restart(); 
-  }, false );
 
 let paragraphs = document.querySelectorAll('p');
 
@@ -443,6 +444,47 @@ masks.forEach( mask => {
     });
 })
 
+let introPage = gsap.timeline();
+
+introPage.set(".section--mission .container", {clipPath: "polygon(50% 50%, 50% 50%, 50% 50%, 50% 50%)"});
+
+introPage.to(".section--mission .container", {
+    clipPath: "polygon(0 0, 100% 0, 100% 100%, 0 100%)",
+    duration: 1.2,
+    ease: "Power3.in"
+});
+
+introPage.fromTo(".section--mission .container",
+{
+    clipPath: "polygon(0 0, 100% 0, 100% 100%, 0 100%)"
+},
+{
+    scrollTrigger: {
+        trigger: ".section--mission",
+        scrub: 0.6,
+        pin: true
+    },
+    //clipPath: "polygon(50% 0, 50% 0, 50% 100%, 50% 100%)",
+    clipPath: "polygon(39% 0, 61% 0, 61% 100%, 39% 100%)",
+    duration: 0.6,
+    ease: "Power3.inOut"
+}
+);
+
+window.addEventListener('click', () => {
+    introPage.play();
+}, false);
+
+gsap.to(".mission__bg", {
+    scrollTrigger: {
+        trigger: ".section--mission",
+        scrub: 1.2,
+        pin: true
+    },
+    scale: 1.2,
+    transformOrigin: "30% 10%"
+});
+
 let sections = gsap.utils.toArray(".panel");
 
 gsap.to(sections, {
@@ -451,8 +493,8 @@ gsap.to(sections, {
     scrollTrigger: {
         trigger: ".wrapper",
         pin: true,
-        scrub: 0.1,
-        end: "+=3000"//() => "+=" + (document.querySelector(".wrapper").offsetWidth)/2
+        scrub: 0.3,
+        end: "+=3000"
     }
 });
 

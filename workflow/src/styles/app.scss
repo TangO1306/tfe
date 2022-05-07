@@ -124,17 +124,19 @@ html{
     }
 
     &--mission{
+      //position: fixed;
+      //z-index: -1;
+      //top: 0;
       background-color: $black;
       height: 100vh;
 
       .container{
         margin-top: 144px;
         height: 100%;
-        background-image: url("../assets/images/atlas-V.jpg");
-        background-repeat: no-repeat;
-        background-size: 100%;
-        background-position: center;
-        background-blend-mode: darken;
+        //background-image: url("../assets/images/atlas-V.jpg");
+        //background-repeat: no-repeat;
+        //background-size: 100%;
+        //background-position: center;
       }
     }
 
@@ -157,6 +159,13 @@ html{
     &--light{
       background-color: $white;
     }
+  }
+
+  .mission__bg{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
   }
 
   p{
@@ -227,9 +236,9 @@ html{
   
   .scroll{
     position: absolute;
-    height: 36px;
-    width: 22px;
-    border: 2px solid $white;
+    height: 32px;
+    width: 13px;
+    border: 4px solid $white;
     margin: auto;
     left: 0;
     right: 0;
@@ -244,8 +253,8 @@ html{
     top: 8px;
     left: 0;
     right: 0;
-    height: 8px;
-    width: 4px;
+    height: 9px;
+    width: 3px;
     border-radius: 4px;
     background-color: $white;
     animation: scroll ease-in-out 2s infinite;
@@ -261,7 +270,7 @@ html{
     text-align: center;
     display: block;
     color: $white;
-    left: -19px;
+    left: -20px;
     bottom: -28px;
   }
   
@@ -355,11 +364,7 @@ html{
     }
 
     &--menu{
-      display: flex;
-      gap: 12px;
-      align-items: center;
       z-index: 12;
-      padding: 18px 0;
     }
   }
 
@@ -471,7 +476,7 @@ html{
   }
 
   .svg{
-    height: 80vh;
+    height: 75vh;
   }
 
   .section--mars{
@@ -507,8 +512,21 @@ html{
       display: block;
     }
 
+    &__percent{
+      font-size: $fontsizeImage;
+      font-weight: 600;
+      color: $white;
+      text-align: center;
+      display: block;
+
+      &--bold{
+        color: $lightgrey;
+        font-size: $smDesktop;
+      }
+    }
+
     &__center{
-      margin: 0 12px;
+      margin: 0 20%;
     }
 
     &__left{
@@ -554,6 +572,7 @@ ol{
   margin: 0;
   position: relative;
   z-index: 9;
+  overflow: hidden;
 
   &__content{
       width: 100%;

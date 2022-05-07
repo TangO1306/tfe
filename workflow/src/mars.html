@@ -32,17 +32,27 @@
 		<header class="header">
 			<div class="menu">
 				<a href="index.html"><img class="menu__logo" src="assets/images/logo.svg" alt="logo"></a>
-				<button class="btn btn--menu"><span class="menu__text">Menu</span><img class="menu__img" src="assets/images/burger-menu.svg" alt="bouton menu"></button>
+				<button class="btn btn--menu"><img class="menu__img" src="assets/images/burger-menu.svg" alt="bouton menu"></button>
 			</div>
 			<div class="grid">
 				<div class="container">
 					<nav class="nav">
 						<ul class="list nav__list">
+							<li class="nav__element"><span><a class="nav__element--lien nav__element--actif" href="index.html">Home</a></span></li>
 							<li class="nav__element"><a class="nav__element--lien" href="mars.html">Mars</a></li>
 							<li class="nav__element"><a class="nav__element--lien" href="mission.html">Mission</a></li>
 							<li class="nav__element"><a class="nav__element--lien" href="rover.html">Rover</a></li>
 						</ul>
 					</nav>
+					<div class="contenu__hidden">
+						<span>0</span>
+						<ul class="list number__list">
+							<li class="number__element">1</li>
+							<li class="number__element">2</li>
+							<li class="number__element">3</li>
+							<li class="number__element">4</li>
+						</ul>
+					</div>
 				</div>
 			</div>
 		</header>
@@ -86,7 +96,7 @@
 									</li>
 									<li class="caracteristique__center">
 										<img src="assets/images/diametre.svg" alt="diametre">
-										<span><span>53,2</span>%</span>
+										<span class="caracteristique__percent"><span class="caracteristique__percent--bold">53.2</span>%</span>
 									</li>
 									<li class="caracteristique__right">
 										<h4 class="title title--small">Diamètre</h4>
@@ -102,7 +112,7 @@
 									</li>
 									<li class="caracteristique__center">
 										<img src="assets/images/surface.svg" alt="surface">
-										<span><span>28,4</span>%</span>
+										<span class="caracteristique__percent"><span class="caracteristique__percent--bold">28.4</span>%</span>
 									</li>
 									<li class="caracteristique__right">
 										<h4 class="title title--small">Surface</h4>
@@ -118,7 +128,7 @@
 									</li>
 									<li class="caracteristique__center">
 										<img src="assets/images/distance.svg" alt="distance du soleil">
-										<span><span>152,4</span>%</span>
+										<span class="caracteristique__percent"><span class="caracteristique__percent--bold">152.4</span>%</span>
 									</li>
 									<li class="caracteristique__right">
 										<h4 class="title title--small">Distance du Soleil</h4>
@@ -135,8 +145,8 @@
 										<span class="caracteristique__unit">milliards km³</span>
 									</li>
 									<li class="caracteristique__center">
-										svg
-										<span><span>53,2</span>%</span>
+										<img src="" alt="volume">
+										<span class="caracteristique__percent"><span class="caracteristique__percent--bold">15.1</span>%</span>
 									</li>
 									<li class="caracteristique__right">
 										<h4 class="title title--small">Volume</h4>
@@ -151,8 +161,8 @@
 										<span class="caracteristique__unit">trillions kg</span>
 									</li>
 									<li class="caracteristique__center">
-										svg
-										<span><span>53,2</span>%</span>
+										<img src="" alt="masse">
+										<span class="caracteristique__percent"><span class="caracteristique__percent--bold">10.7</span>%</span>
 									</li>
 									<li class="caracteristique__right">
 										<h4 class="title title--small">Masse</h4>
@@ -167,8 +177,8 @@
 										<span class="caracteristique__unit">mètre/seconde²</span>
 									</li>
 									<li class="caracteristique__center">
-										svg
-										<span><span>53,2</span>%</span>
+										<img src="" alt="gravité">
+										<span class="caracteristique__percent"><span class="caracteristique__percent--bold">37.9</span>%</span>
 									</li>
 									<li class="caracteristique__right">
 										<h4 class="title title--small">Gravité</h4>
@@ -185,8 +195,8 @@
 										<span class="caracteristique__unit">degrés Celsius</span>
 									</li>
 									<li class="caracteristique__center">
-										svg
-										<span><span>53,2</span>%</span>
+										<img src="" alt="température">
+										<span class="caracteristique__percent"><span class="caracteristique__percent--bold">550</span>%</span>
 									</li>
 									<li class="caracteristique__right">
 										<h4 class="title title--small">Température</h4>
@@ -201,8 +211,8 @@
 										<span class="caracteristique__unit">jours</span>
 									</li>
 									<li class="caracteristique__center">
-										svg
-										<span><span>53,2</span>%</span>
+										<img src="" alt="révolution">
+										<span class="caracteristique__percent"><span class="caracteristique__percent--bold">187.9</span>%</span>
 									</li>
 									<li class="caracteristique__right">
 										<h4 class="title title--small">Révolution</h4>
@@ -217,8 +227,8 @@
 										<span class="caracteristique__unit">heures</span>
 									</li>
 									<li class="caracteristique__center">
-										svg
-										<span><span>53,2</span>%</span>
+										<img src="" alt="rotation">
+										<span class="caracteristique__percent"><span class="caracteristique__percent--bold">102.7</span>%</span>
 									</li>
 									<li class="caracteristique__right">
 										<h4 class="title title--small">Rotation</h4>
@@ -314,7 +324,10 @@
 
 					</div>
 					<div class="mars__4">
-						
+						<figure class="image">
+                            <div class="image__mask"><img class="image__content" src="assets/images/volcans.jpg" srcset="assets/images/volcans@2x.jpg 2x" alt="volcans"></div>
+                            <figcaption class="image__subtitle"><span class="image__subtitle--bold">Alexander Mather</span>Name the rover</figcaption>
+                        </figure>
 					</div>
 					<div class="mars__5">
 						<p>Il y a 3 milliards d’années, Mars n’était pas du tout rouge, sa couleur rouille caractéristique est apparue lorsque la planète ne possédait plus d’atmosphère qui a alors lentement oxydé le fer, présent en grande quantité à sa&nbsp;surface.</p>
@@ -337,7 +350,10 @@
 						</ol>
 					</div>
 					<div class="mars__10">
-						
+						<figure class="image">
+                            <div class="image__mask"><img class="image__content" src="assets/images/perseverance.jpg" srcset="assets/images/perseverance@2x.jpg 2x" alt="perseverance"></div>
+                            <figcaption class="image__subtitle"><span class="image__subtitle--bold">Alexander Mather</span>Name the rover</figcaption>
+                        </figure>
 					</div>
 				</div>
 			</section>
