@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="fr">
 	<head>
 		<title>Roover - Rover</title>
 		<link rel="stylesheet" href="styles/app.css">
@@ -57,13 +57,34 @@
             </div>
         </header>
 		<main>
+            <section class="section section--hero">
+                <div class="container">
+					<div class="hero__hidden">
+						<img class="hero__bg hero__bg--rover" src="assets/images/rover.jpg" srcset="assets/images/rover@2x.jpg 2x" alt="atlas-V">
+					</div>
+                    <h1 class="title title--extralarge">
+						<span class="hidden">
+							<span>La</span>
+						</span>
+						<span class="hidden">
+							<span>mission</span>
+						</span>
+						<span class="hidden">
+							<span>Mars</span>
+						</span>
+						<span class="hidden">
+							<span>2020</span>
+						</span>
+					</h1>
+                </div>
+            </section>
             <section class="section section--light">
                 <div class="container">
                     <h2 class="title title--medium rover__1">La création du rover Perseverance</h2>
                     <div class="rover__2">
                         <figure class="image">
-                            <div class="image__mask"><img class="image__content" src="assets/images/mars1.jpg" alt="Trulli"></div>
-                            <figcaption class="image__subtitle"><span class="image__subtitle--bold">Alexander Mather</span>Name the rover</figcaption>
+                            <div class="image__mask"><img class="image__content" src="assets/images/concept.jpg" srcset="assets/images/concept@2x 2x" alt="concept art"></div>
+                            <figcaption class="image__subtitle"><span class="image__subtitle--bold">Rover</span>Concept art</figcaption>
                         </figure>
                     </div>
                     <div class="rover__3">
@@ -76,13 +97,13 @@
                     <div class="rover__5">
                         <figure class="image">
                             <div class="image__mask"><img class="image__content" src="assets/images/rocker-bogie.jpg" srcset="assets/images/rocker-bogie@2x.jpg 2x" alt="rocker-bogie"></div>
-                            <figcaption class="image__subtitle"><span class="image__subtitle--bold">Alexander Mather</span>Name the rover</figcaption>
+                            <figcaption class="image__subtitle"><span class="image__subtitle--bold">Rocker-bogie</span>Jet Propulsion Lab</figcaption>
                         </figure>
                     </div>
                     <div class="rover__6">
                         <figure class="image">
                             <div class="image__mask"><img class="image__content" src="assets/images/mmrtg.jpg" srcset="assets/images/mmrtg@2x.jpg 2x" alt="mmrtg"></div>
-                            <figcaption class="image__subtitle"><span class="image__subtitle--bold">Alexander Mather</span>Name the rover</figcaption>
+                            <figcaption class="image__subtitle"><span class="image__subtitle--bold">MMRTG</span>Jet Propulsion Lab</figcaption>
                         </figure>
                     </div>
                     <div class="rover__7">
@@ -97,13 +118,13 @@
                     <div class="rover__9">
                         <figure class="image">
                             <div class="image__mask"><img class="image__content" src="assets/images/stockage.jpg" srcset="assets/images/stockage@2x.jpg 2x" alt="stockage"></div>
-                            <figcaption class="image__subtitle"><span class="image__subtitle--bold">Alexander Mather</span>Name the rover</figcaption>
+                            <figcaption class="image__subtitle"><span class="image__subtitle--bold">Stockage échantillons</span>Jet Propulsion Lab</figcaption>
                         </figure>
                     </div>
                     <div class="rover__10">
                         <figure class="image">
-                            <div class="image__mask"><img class="image__content" src="assets/images/sterilisation.jpg" srcset="assets/images/sterilisation@2x.jpg 2x"alt="stérilisation"></div>
-                            <figcaption class="image__subtitle"><span class="image__subtitle--bold">Alexander Mather</span>Name the rover</figcaption>
+                            <div class="image__mask"><img class="image__content" src="assets/images/sterilisation.jpg" srcset="assets/images/sterilisation@2x.jpg 2x" alt="stérilisation"></div>
+                            <figcaption class="image__subtitle"><span class="image__subtitle--bold">Combinaison</span>Jet Propulsion Lab</figcaption>
                         </figure>
                     </div>
                     <div class="rover__11">
@@ -117,74 +138,71 @@
                     <ul class="list instrument__list">
                         <li class="instrument__element">
                             <button class="btn btn--instrument" data-tab="instrument1">
-                                <span class="number">01</span>
-                                <div class="btn--test">
+                                <span class="instrument__number">01</span>
+                                <span class="instrument__name">
                                     <span>Mastcam-Z</span>
                                     <span>Caméra 3D</span>
-                                </div>
+                                </span>
                             </button>
                         </li>
                         <li class="instrument__element">
                             <button class="btn btn--instrument" data-tab="instrument2">
-                                <span class="number">02</span>
-                                <div class="btn--test">
+                                <span class="instrument__number">02</span>
+                                <span class="instrument__name">
                                     <span>MEDA</span>
                                     <span>Météorologie</span>
-                                </div>
+                                </span>
                             </button>
                         </li>
                         <li class="instrument__element">
                             <button class="btn btn--instrument" data-tab="instrument3">
-                                <span class="number">03</span>
-                                <div class="btn--test">
+                                <span class="instrument__number">03</span>
+                                <span class="instrument__name">
                                     <span>PIXL</span>
                                     <span>Lithochimie</span>
-                                </div>
+                                </span>
                             </button>
                         </li>
                         <li class="instrument__element">
                             <button class="btn btn--instrument" data-tab="instrument4">
-                                <span class="number">04</span>
-                                <div class="btn--test">
+                                <span class="instrument__number">04</span>
+                                <span class="instrument__name">
                                     <span>RIMFAX</span>
                                     <span>Géologie</span>
-                                </div>
+                                </span>
                             </button>
                         </li>
                         <li class="instrument__element">
                             <button class="btn btn--instrument" data-tab="instrument5">
-                                <span class="number">05</span>
-                                <div class="btn--test">
+                                <span class="instrument__number">05</span>
+                                <span class="instrument__name">
                                     <span>SHERLOC</span>
                                     <span>Minéralogie</span>
-                                </div>
+                                </span>
                             </button>
                         </li>
                         <li class="instrument__element">
                             <button class="btn btn--instrument" data-tab="instrument6">
-                                <span class="number">06</span>
-                                <div class="btn--test">
+                                <span class="instrument__number">06</span>
+                                <span class="instrument__name">
                                     <span>SuperCam</span>
                                     <span>Minéralogie</span>
-                                </div>
+                                </span>
                             </button>
                         </li>
                         <li class="instrument__element">
                             <button class="btn btn--instrument" data-tab="instrument7">
-                                <span class="number">07</span>
-                                <div class="btn--test">
+                                <span class="instrument__number">07</span>
+                                <span class="instrument__name">
                                     <span>MOXIE</span>
                                     <span>Expérience</span>
-                                </div>
+                                </span>
                             </button>
                         </li>
                     </ul>
                     <h3 class="title title--medium title--tabs">Mastcam-Z</h3>
                     <p class="pagination"><span class="currentNumber">01 </span>— 07</p>
                     <svg class="rover" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 550">
-                        <style>
-                          .structure,.instrument{fill:none;stroke:#b8b8b8;stroke-linecap:round;stroke-linejoin:round}.instrument{stroke:#fff}
-                        </style>
                         <g class="structure">
                             <circle cx="343.2" cy="314.8" r="7.6"/>
                             <path d="M507.3 420.2v4.1l-3 4.6v1.4c0 .6-.1 1.1-.4 1.6v.2c-1.8 4.7-10.5 8.2-20.8 8.2s-19.1-3.6-20.9-8.3c-.2-.5-.3-1.1-.3-1.7v-5.1h1.8v-8l8.1-4.4v-3.1l-3-4-105.1-78-1.8-1.3 5.8-12.2h6.6l28.8 21.2v4.3l67.5 51.4 6.2 2.6 1.5-1.2v-10.6h12.6v17.8l7.1 4.6v8l5.9.9 1.8 1.2v5.9l1.6-.1z"/>
@@ -346,15 +364,28 @@
             </section>
             <section class="section section--light">
                 <div class="container">
-                    <h2 class="title title--medium rover__12">Comment réagit le son sur Mars ?</h2>
+                    <h2 class="title title--medium rover__12">Comment réagit le son sur Mars&#8239;?</h2>
                 <div class="rover__13">
                     <p class="bold">Avec Perseverance, c’est seulement le deuxième microphone qui a pu enregistrer des sons sur Mars. En effet, le premier était l’atterrisseur InSight. La NASA a retenté l'expérience avec d’autres missions mais les microphones n’ont jamais pu&nbsp;fonctionner.</p>
                     <p>Il faut savoir que le son sonne différemment selon le milieu où il se trouve, c’est le même principe avec l’hélium qui rend la voix aiguë. L’atmosphère martienne, composée à 96% de dioxyde de carbone, rend les sons aigus presque imperceptibles, plus étouffés et silencieux. A cause de sa température glaciale, la vitesse du son est plus faible sur Mars, 240 m/s contre 340 m/s pour la&nbsp;Terre.</p>
                 </div>
                 <div class="rover__14">
-
+                    <div class="audio">
+                        <div class="audio__lecteur">
+                            <audio class="audio__fichier" src="assets/audio/premier.mp3"></audio>
+                            <ul class="list audio__control">
+                                <li><button class="btn btn--prev icon icon__prev"></button></li>
+                                <li><button class="btn btn--play icon icon__play"></button></li>
+                                <li><button class="btn btn--next icon icon__next"></button></li>
+                            </ul>
+                        </div>
+                        <div class="audio__content">
+                            <h4 class="title title--small titre">Premier son enregistré sur Mars</h4>
+                            <small class="date">19 Février 2021</small>
+                        </div>
+                    </div>
                 </div>
-                <h2 class="title title--medium rover__15">L’hélicoptère de reconnaissance, Ingenuity</h2>
+                <h2 class="title title--medium rover__15"> Ingenuity, l’hélicoptère de&nbsp;reconnaissance</h2>
                 <div class="rover__16">
 
                 </div>
@@ -388,7 +419,7 @@
 					</ul>
 				</div>
 				<ul class="footer__bottom">
-					<li><a class="date" href="http://tanguy-hellin.be/">Tanguy Hellin ©2022</a></li>
+					<li><a class="annee" href="http://tanguy-hellin.be/">Tanguy Hellin ©2022</a></li>
 					<li><a href="http://dwm.re/"><img class="dwt" src="assets/images/DWT.svg" alt="dwt"></a></li>
 				</ul>
 			</div>

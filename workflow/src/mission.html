@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="fr">
 	<head>
 		<title>Roover - Mission</title>
 		<link rel="stylesheet" href="styles/app.css">
@@ -57,9 +57,11 @@
 			</div>
 		</header>
 		<main>
-            <section class="section section--mission">
+            <section class="section section--hero">
                 <div class="container">
-					<img class="mission__bg" src="assets/images/atlas-V.jpg" alt="atlas-V">
+					<div class="hero__hidden">
+						<img class="hero__bg hero__bg--fusee" src="assets/images/atlas-v.jpg" srcset="assets/images/atlas-v@2x.jpg 2x" alt="atlas-V">
+					</div>
                     <h1 class="title title--extralarge">
 						<span class="hidden">
 							<span>La</span>
@@ -84,10 +86,13 @@
 						<p>Malheureusement, le projet doit être abandonné pour des raisons budgétaires mais suite au succès de l'atterrissage du rover Curiosity en 2012, le président Barack Obama relance l’intérêt de créer un nouveau rover. C’est ainsi qu’est née la mission Mars&nbsp;2020.</p>
 					</div>
 					<div class="mission__3">
-
+						
 					</div>
 					<div class="mission__4">
-						
+						<figure class="image">
+                            <div class="image__mask"><img class="image__content" src="assets/images/jezero.jpg" srcset="assets/images/jezero@2x.jpg 2x" alt="volcans"></div>
+                            <figcaption class="image__subtitle"><span class="image__subtitle--bold">Cratère Jezero</span>Mars</figcaption>
+                        </figure>
 					</div>
 					<h2 class="title title--medium mission__5">Le cratère Jezero</h2>
 					<div class="mission__6">
@@ -96,16 +101,50 @@
 					</div>
 				</div>
 			</section>
-            <section class="wrapper">
-                <div class="panel jaune">div 1</div>
-                <div class="panel bleu">div 2</div>
-                <div class="panel rouge">div 3</div>
+            <section class="section--dark wrapper">
+                <div class="timeline">
+					<div class="container">
+						<figure class="image">
+							<video src="assets/videos/launch.mp4" poster="assets/images/atlas-v.jpg" width="600px" controls></video>
+							<figcaption class="image__subtitle"><span class="image__subtitle--bold">Décollage</span>Cap Canaveral</figcaption>
+						</figure>
+						<h3 class="title title--small">Le décollage</h3>
+						<p class="bold">La sonde spatiale décolle le 30 juillet 2020 à 11h50 depuis la base mythique de lancement de Cap Canaveral en Floride. Comme pour InSight et Curiosity, la sonde spatiale Mars 2020 est mise en orbite à l’aide du lanceur Atlas V-541, l’une des fusées les plus puissantes pour le vol&nbsp;interplanétaire.</p>
+						<p>Pour que la mission soit un succès, la fenêtre de lancement de la fusée est programmée entre le 17 juillet et le 15 août 2020 au moment où Mars se retrouve au plus proche de la Terre tous les 26 mois environ. En effet, comme les deux planètes orbitent autour du Soleil à des vitesses différentes, il faut attendre qu’elles soient alignées pour consommer le moins d’énergie afin de se rendre sur&nbsp;Mars.</p>
+					</div>
+				</div>
+                <div class="timeline">
+					<div class="container">
+						<p class="bold">Ce voyage vers Mars a duré 204 jours soit 7 mois a une vitesse de croisière d’environ 39 600 km/h et a parcouru au total une distance de 470 millions de kilomètres alors qu’au moment de l'atterrissage, la distance Terre-Mars n’était que de 105 millions de&nbsp;kilomètres.</p>
+						<p>Durant le voyage, les ingénieurs ont eu un nombre limité de tentatives pour corriger la trajectoire de la sonde, la Trajectory Correction Manoeuver, au moyen de huit propulseurs : trois durant le transit Terre-Mars et trois autres avant la phase d’approche de Mars dont une de secours et une&nbsp;d’urgence.</p>
+						<figure class="image">
+							<div class="image__mask"><img class="image__content" src="assets/images/trajectoire.gif"></div>
+							<figcaption class="image__subtitle"><span class="image__subtitle--bold">Décollage</span>Cap Canaveral</figcaption>
+						</figure>
+					</div>
+				</div>
+                <div class="timeline">
+					<div class="container">
+						<p class="bold">L’atterrissage périlleux du rover sur le sol martien nommé les septs minutes de terreur en passant de 20 000 km/h à zéro se décompose en cinq phases&#8239;:</p>
+						<ol>
+							<li>la phase d’approche, le largage de l’étage de croisière et l'éjection des lests pour créer de la&nbsp;portance</li>
+							<li>la rentrée atmosphérique, le freinage par l’atmosphère martienne et les deux boucliers thermiques et la correction de l’angle d’attaque</li>
+							<li>la descente avec le déploiement du parachute pour réduire la vitesse, l’expulsion du bouclier thermique avant et le calcul de la&nbsp;position</li>
+							<li>la descente rétro-propulsée du Sky Crane, le largage du bouclier thermique arrière ainsi que le parachute pour éviter une&nbsp;collision</li>
+							<li>la séparation de Sky Crane avec le rover, le déploiement des roues, l’atterrissage et la manœuvre d'évitement</li>
+						</ol>
+						<figure class="image">
+							<video src="assets/videos/landing.mp4" width="600px" controls></video>
+							<figcaption class="image__subtitle"><span class="image__subtitle--bold">Atterrissage</span>Mars</figcaption>
+						</figure>
+					</div>
+				</div>
             </section>
 			<section class="section section--dark">
 				<div class="container">
 					<h2 class="title title--medium mission__7">Les différents objectifs de la mission</h2>
 					<div class="mission__8">
-						<p class="bold">Un comité d’experts a lieu en janvier 2013 suite à la demande de la NASA, pour y définir le principal objectif, c’est-à-dire la collecte d'échantillons et leur stockage à la surface de Mars, en attendant la mission suivante qui s'occupera de les envoyer sur Terre. Le compte rendu écrit par la Science Definition Team assigne cinq objectifs à la mission de Mars 2020 :</p>
+						<p class="bold">Un comité d’experts a lieu en janvier 2013 suite à la demande de la NASA, pour y définir le principal objectif, c’est-à-dire la collecte d'échantillons et leur stockage à la surface de Mars, en attendant la mission suivante qui s'occupera de les envoyer sur Terre. Le compte rendu écrit par la Science Definition Team assigne cinq objectifs à la mission de Mars 2020&#8239;:</p>
 					</div>
 					<div class="mission__9">
 						<ol>
@@ -122,14 +161,20 @@
 						<p>Il s'agit d’une des missions spatiales les plus complexes jamais réalisée à ce jour étant donné que ce type de manœuvre n’a jamais été effectué auparavant : un atterrissage d’une grande précision et un décollage depuis le sol martien. Le scénario élaboré par la NASA est divisé en trois missions : la première qui se déroule actuellement repère les sites, collecte et stocke les carottes du sol martien, en 2026, la deuxième conduira les échantillons en orbite de Mars et enfin, en 2031, la dernière les ramènera sur&nbsp;Terre.</p>
 					</div>
 					<div class="mission__12">
-
+						<figure class="image">
+                            <div class="image__mask"><img class="image__content" src="assets/images/srl.jpg" srcset="assets/images/srl@2x.jpg 2x" alt="volcans"></div>
+                            <figcaption class="image__subtitle"><span class="image__subtitle--bold">Sample Retrival Lander</span>Mars</figcaption>
+                        </figure>
 					</div>
 					<div class="mission__13">
 						<h3 class="title title--small">Sample Retrieval Lander (SRL)</h3>
 						<p>Une fois la mission Mars 2020 terminée et les échantillons collectés, la seconde mission, Sample Retrival Lander, une plateforme de lancement sur laquelle est posée une fusée Mars Ascent Vehicle, ramènera un container des échantillons amassés par Perseverance en orbite basse de Mars. Le petit rover Sample Fetch Rover se chargera d'apporter les tubes jusqu’à la&nbsp;plateforme.</p>
 					</div>
 					<div class="mission__14">
-						
+						<figure class="image">
+                            <div class="image__mask"><img class="image__content" src="assets/images/ero.jpg" srcset="assets/images/ero@2x.jpg 2x" alt="volcans"></div>
+                            <figcaption class="image__subtitle"><span class="image__subtitle--bold">Earth Return Orbiter</span>Mars</figcaption>
+                        </figure>
 					</div>
 					<div class="mission__15">
 						<h3 class="title title--small">Earth Return Orbiter (ERO)</h3>
@@ -160,7 +205,7 @@
 					</ul>
 				</div>
 				<ul class="footer__bottom">
-					<li><a class="date" href="http://tanguy-hellin.be/">Tanguy Hellin ©2022</a></li>
+					<li><a class="annee" href="http://tanguy-hellin.be/">Tanguy Hellin ©2022</a></li>
 					<li><a href="http://dwm.re/"><img class="dwt" src="assets/images/DWT.svg" alt="dwt"></a></li>
 				</ul>
 			</div>
