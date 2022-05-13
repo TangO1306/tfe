@@ -168,7 +168,7 @@ function sliderPrev(){
 const lecteur = document.querySelector(".audio");
 
 const audio = document.querySelector(".audio__fichier");
-const titre = document.querySelector(".titre");
+const titre = document.querySelector(".audio__content .title--small");
 const date = document.querySelector(".date");
 const imgPlay = document.querySelector(".btn--play");
 
@@ -399,8 +399,7 @@ paragraphs.forEach( paragraph => {
     gsap.from(paragraph, {
         scrollTrigger: {
             trigger: paragraph,
-            start: "top 85%",
-            markers: true
+            start: "top 85%"
         },
         duration: 0.6,
         opacity: 0
@@ -413,8 +412,7 @@ masks.forEach( mask => {
     let tl = gsap.timeline({
         scrollTrigger: {
             trigger: mask,
-            start: "top 75%",
-            markers: true
+            start: "top 75%"
         }
     });
 
@@ -504,7 +502,6 @@ gsap.to(sections, {
         trigger: ".wrapper",
         pin: true,
         scrub: 0.3,
-        markers: true,
         start: "top top",
         end: "+=300%"
     }

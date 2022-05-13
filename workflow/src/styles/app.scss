@@ -592,18 +592,31 @@ ol{
 }
 
 .audio{
+  position: relative;
+  z-index: 9;
   background-color: $black;
   display: flex;
+  gap: 24px;
   padding: 24px;
+
+  &__lecteur{
+    margin: auto 0;
+  }
 
   &__control{
     display: flex;
-    justify-content: center;
     gap: 12px;
+    li{
+      line-height: $lineheightTitle;
+    }
   }
 
   &__content{
     color: $white;
+    
+    .title--small{
+      margin-bottom: 0;
+    }
   }
 }
 
@@ -617,6 +630,8 @@ ol{
 
   &__play{
     background-image: url("../assets/images/play.svg");
+    border-radius: 50%;
+    background-color: $white;
     &:hover{
       transform: scale(1.1);
     }
@@ -624,29 +639,37 @@ ol{
   
   &__pause{
     background-image: url("../assets/images/pause.svg");
+    border-radius: 50%;
+    background-color: $white;
     &:hover{
       transform: scale(1.1);
     }
   }
   
   &__prev{
-    background-image: url("../assets/images/back_white.svg");
-    opacity: 0.75;
+    background-image: url("../assets/images/skip.svg");
+    transform: rotate(180deg);
+    opacity: 1;
     &:hover{
-      opacity: 1;
+      opacity: 0.75;
     }
   }
   
   &__next{
-    background-image: url("../assets/images/next_white.svg");
-    opacity: 0.75;
+    background-image: url("../assets/images/skip.svg");
+    opacity: 1;
     &:hover{
-      opacity: 1;
+      opacity: 0.75;
     }
   }
 }
 
-.rover__8{
+.date{
+  font-size: $fontsizeImage;
+  color: $lightgrey;
+}
+
+.rover__8, .rover__15{
   margin-top: 96px;
 }
 
@@ -654,11 +677,11 @@ ol{
   margin-bottom: 96px;
 }
 
-.rover__1, .mission__1{
+.rover__1, .rover__12, .mission__1{
   margin-top: 192px;
 }
 
-.mars__2, .mars__5, .mars__10, .rover__11{
+.mars__2, .mars__5, .mars__10, .rover__11, .rover__17{
   margin-bottom: 192px;
 }
 
@@ -666,6 +689,6 @@ ol{
   margin-top: 25%;
 }
 
-.rover__2, .rover__9{
+.rover__2, .rover__9, .rover__14{
   align-self: center;
 }
