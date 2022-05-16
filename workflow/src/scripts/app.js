@@ -437,17 +437,18 @@ masks.forEach( mask => {
     });
 })
 
-/*let introPage = gsap.timeline();
-introPage.set(".hero__bg--fusee, .hero__bg--rover", {clipPath: "polygon(50% 50%, 50% 50%, 50% 50%, 50% 50%)"});
+/*gsap.set(".hero__bg--fusee, .hero__bg--rover", {clipPath: "polygon(50% 50%, 50% 50%, 50% 50%, 50% 50%)"});
 
-introPage.to(".hero__bg--fusee, .hero__bg--rover", {
+gsap.to(".hero__bg--fusee, .hero__bg--rover", {
     duration: 1.2,
     ease: "slow(0.5, 0.7, false)",
     clipPath: "polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)",
     transformOrigin: "50% 50%"
-});
+});*/
 
-introPage.from(".hidden span", {
+let pinIntro = gsap.timeline();
+
+pinIntro.from(".hidden span", {
     ease: "power4.out",
     y: "100%",
     stagger: 0.2,
@@ -455,28 +456,26 @@ introPage.from(".hidden span", {
     scrollTrigger: ".hidden span"
 });
 
-introPage.fromTo(".hero__hidden",
-{
+pinIntro.fromTo(".hero__hidden" , 
+{ 
     clipPath: "polygon(0 0, 100% 0, 100% 100%, 0 100%)"
-},
+}, 
 {
     scrollTrigger: {
         trigger: ".section--hero",
-        pin: true,
+        start: "top top",
+        end: "+=100%", 
         scrub: 0.6,
+        pin: true
     },
-    clipPath: "polygon(39% 0, 61% 0, 61% 100%, 39% 100%)",
-    duration: 0.6,
-    ease: "Power3.inOut"
-}
-);
+    clipPath: "polygon(39% 0, 61% 0, 61% 100%, 39% 100%)"
+})
 
 gsap.to(".hero__bg--fusee", {
     scrollTrigger: {
         trigger: ".section--hero",
         scrub: 1.2,
-        pin: true,
-        pinnedContainer: true
+        pin: true
     },
     scale: 1.2,
     transformOrigin: "30% 0"
@@ -486,12 +485,21 @@ gsap.to(".hero__bg--rover", {
     scrollTrigger: {
         trigger: ".section--hero",
         scrub: 1.2,
-        pin: true,
-        pinnedContainer: true
+        pin: true
     },
     scale: 1.2,
     transformOrigin: "135% 0"
-});*/
+});
+
+gsap.to(".hero__bg--paysage", {
+    scrollTrigger: {
+        trigger: ".section--hero",
+        scrub: 1.2,
+        pin: true
+    },
+    scale: 1.2,
+    transformOrigin: "10% 50%"
+});
 
 let sections = gsap.utils.toArray(".timeline");
 

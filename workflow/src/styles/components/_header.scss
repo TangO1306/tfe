@@ -39,7 +39,7 @@
   z-index: 11;
   background-color: $black;
   right: -100vw;
-  transition: right .3s ease-out;
+  //transition: right .3s ease-out;
 }
 
 .nav{
@@ -55,6 +55,12 @@
     line-height: $lineheightTitle;
     display: inline-block;
 
+    span{
+      margin: 24px 0;
+      overflow: hidden;
+      display: block;
+    }
+
     &--lien{
       font-size: $lgDesktop;
       color: $white;
@@ -65,13 +71,18 @@
       font-family: "Be Vietnam Pro", sans-serif;
 
       &:hover{
-        color: $lightgrey;
+        color: $orange;
       }
     }
 
     &--actif{
-      color: transparent;
-      -webkit-text-stroke: 1px $white;
+      color: $black;
+      text-shadow: -1px -1px 0 $white, 1px -1px 0 $white, -1px 1px 0 $white, 1px 1px 0 $white;
+
+      &:hover{
+        color: $black;
+        text-shadow: -1px -1px 0 $orange, 1px -1px 0 $orange, -1px 1px 0 $orange, 1px 1px 0 $orange;
+      }
     }
   }
 }
