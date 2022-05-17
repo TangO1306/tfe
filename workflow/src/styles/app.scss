@@ -113,6 +113,9 @@ body{
   
     &--content{
       background-color: $white;
+      .container{
+        height: 100vh;
+      }
     }
 
     &--hero{
@@ -202,6 +205,7 @@ body{
     overflow: hidden;
     width: 18vw;
     height: 70vh;
+    margin: auto;
   
     &__content{
       height: 100%;
@@ -220,11 +224,7 @@ body{
   
     .card:hover &__bg{
       transform: scale(1.05);
-      filter: brightness(0.5);
-    }
-  
-    .card:hover &__body{
-      opacity: 1;
+      filter: brightness(0.6);
     }
   
     &__body{
@@ -232,8 +232,6 @@ body{
       bottom: 0;
       padding: 24px 48px;
       color: $white;
-      opacity: 0;
-      transition: opacity .4s ease-out;
     }
   }
   
@@ -282,7 +280,7 @@ body{
     bottom: -28px;
   }
   
-  .current-page{
+  /*.current-page{
     position: absolute;
     display: inline-block;
     left: 0;
@@ -301,15 +299,11 @@ body{
     height: 2px;
     width: 192px;
     background-color: $darkgrey;
-  }
+  }*/
 
   .rover{
     position: relative;
     z-index: 9;
-  }
-
-  .title--tabs{
-    margin: 0;
   }
   
   .actif [data-name="Stroke"]{
@@ -336,6 +330,14 @@ body{
     background-color: $black;
     color: $lightgrey;
     margin: 192px 96px;
+    
+    .title--medium, .title--small{
+      margin: 0;
+    }
+
+    p{
+      height: 153px;
+    }
   }
 
   .btn{
@@ -357,6 +359,23 @@ body{
 
     &--menu{
       z-index: 12;
+    }
+
+    &--prev{
+      transform: rotate(180deg);
+      width: 32px;
+      height: 100%;
+      background-image: url("../assets/images/arrow.svg");
+      background-repeat: no-repeat;
+      background-position: center;
+    }
+
+    &--next{
+      width: 32px;
+      height: 100%;
+      background-image: url("../assets/images/arrow.svg");
+      background-repeat: no-repeat;
+      background-position: center;
     }
   }
 
@@ -402,10 +421,6 @@ body{
   .currentNumber{
     font-weight: 600;
     color: $white;
-  }
-
-  .p__instrument{
-    height: 153px;
   }
   
   .wrapper {
@@ -568,20 +583,22 @@ body{
     }
   }
 
-ol{
-  list-style-type: none;
-  counter-reset: li;
-  margin: 0;
-  padding: 0;
+.ordered{
+  &__list{
+    list-style-type: none;
+    counter-reset: li;
+    margin: 0;
+    padding: 0;
+  }
     
-  li:before {
+  &__element:before {
     content: "0" counter(li);
     font-weight: 600;
     margin-right: 12px;
     color: $white;
   }
 
-  li{
+  &__element{
     display: flex;
     counter-increment: li;
     color: $lightgrey;
@@ -596,6 +613,17 @@ ol{
     &--show{
       display: block;
     }
+  }
+
+  &__btn{
+    color: $lightgrey;
+  }
+
+  &__counter{
+    display: inline-block;
+    width: 24px;
+    color: $white;
+    font-weight: 600;
   }
 
   &__control{

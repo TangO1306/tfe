@@ -81,9 +81,9 @@ const content = [
     }
 ];
 
-const nom = document.querySelector(".title--tabs");
+const nom = document.querySelector(".tabs .title--small");
 const nombre = document.querySelector(".currentNumber");
-const description = document.querySelector(".p__instrument");
+const description = document.querySelector(".tabs p");
 const poids = document.querySelector(".poids");
 const consommation = document.querySelector(".consommation");
 const données = document.querySelector(".données");
@@ -124,11 +124,11 @@ year.innerHTML = "Tanguy Hellin ©" + currentYear;
 
 // Slider
 
-const counter = document.querySelector(".counter1");
+const counter = document.querySelector(".slider__counter");
 let sliderIndex = 0;
 
-const btnPrev=document.querySelector(".slider__btn--prev");
-const btnNext=document.querySelector(".slider__btn--next");
+const btnPrev=document.querySelector(".btn--prev");
+const btnNext=document.querySelector(".btn--next");
 
 if(btnNext){
     btnNext.addEventListener("click", sliderNext);
@@ -562,13 +562,13 @@ function leave(){
 }
 
 if(btnNext){
-    btnNext.addEventListener("click", counter69);
-    btnPrev.addEventListener("click", counter69);
+    btnNext.addEventListener("click", counters);
+    btnPrev.addEventListener("click", counters);
 
-    counter69();
+    counters();
 }
 
-function counter69(){
+function counters(){
     let counters = document.querySelectorAll(".slider__element--show .caracteristique__number");
 
     counters.forEach(function(count) {
