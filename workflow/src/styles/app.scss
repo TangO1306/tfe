@@ -76,19 +76,20 @@ body{
     height: 0vh;
     top: 0;
     mix-blend-mode: difference;
-    animation: line .75s ease-out forwards;
-    &-1{
+    animation: line .6s ease-out forwards;
+
+    &:nth-child(1){
       left: 20vw;
     }
-    &-2{
+    &:nth-child(2){
       left: 40vw;
       animation-delay: 0.15s;
     }
-    &-3{
+    &:nth-child(3){
       left: 60vw;
       animation-delay: 0.3s;
     }
-    &-4{
+    &:nth-child(4){
       left: 80vw;
       animation-delay: 0.45s;
     }
@@ -97,6 +98,15 @@ body{
   .section{
     overflow: hidden;
     max-width: 1920px;
+
+    &--mars{
+      background-color: $black;
+
+      .title--medium{
+        text-align: center;
+      }
+    }
+
     &--intro{
       background-color: $black;
       background-image: url("../assets/images/space.jpg");
@@ -120,10 +130,12 @@ body{
 
     &--hero{
       background-color: $black;
+      height: 200vh;
 
       .container{
         margin: 96px;
         height: calc(100vh - 192px);
+        width: calc(100vw - 192px);
       }
       
       .title--extralarge{
@@ -172,11 +184,9 @@ body{
   }
 
   &__bg{
+    margin: 0;
     width: 100%;
     object-fit: cover;
-    &--fusee{
-      height: 100%;
-    }
   }
 }
 
@@ -411,6 +421,10 @@ body{
     }
   }
 
+  .info__element{
+    margin-bottom: 24px;
+  }
+
   .pagination{
     text-align: right;
     letter-spacing: 1px;
@@ -422,12 +436,9 @@ body{
     font-weight: 600;
     color: $white;
   }
-  
-  .wrapper {
-    height: 100vh;
-  }
 
   .wrapper{
+    height: 100vh;
     width: 300%;
     display: flex;
     flex-wrap: nowrap;
@@ -512,18 +523,6 @@ body{
 
   .svg{
     height: 75vh;
-  }
-
-  .section--mars{
-    background-color: $black;
-
-    .title--medium{
-      text-align: center;
-    }
-
-    .container{
-      margin: 192px 0;
-    }
   }
 
   .deimos:hover .phobos{

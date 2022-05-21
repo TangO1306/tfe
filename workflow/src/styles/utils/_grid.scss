@@ -204,10 +204,8 @@
 
 .test1{
     grid-column: 1 / 3;
-
-    .svg{
-      float: right;
-    }
+    position: absolute;
+    right: 0;
   }
 
   .test2{

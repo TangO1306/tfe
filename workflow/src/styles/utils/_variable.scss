@@ -25,8 +25,8 @@ $fontsizeDesktop: 1.8rem;
 $smDesktop: $fontsizeDesktop * $rapportDesktop;
 $mdDesktop: $fontsizeDesktop * $rapportDesktop * $rapportDesktop * $rapportDesktop;
 $lgDesktop: $fontsizeDesktop * $rapportDesktop * $rapportDesktop * $rapportDesktop * $rapportDesktop * $rapportDesktop;
-$xlDesktop: $fontsizeDesktop * $rapportDesktop * $rapportDesktop * $rapportDesktop * $rapportDesktop * $rapportDesktop * $rapportDesktop * $rapportDesktop;
-$xxlDesktop: $fontsizeDesktop * $rapportDesktop * $rapportDesktop * $rapportDesktop * $rapportDesktop * $rapportDesktop * $rapportDesktop * $rapportDesktop * $rapportDesktop;
+$xlDesktop: $fontsizeDesktop * $rapportDesktop * $rapportDesktop * $rapportDesktop * $rapportDesktop * $rapportDesktop * $rapportDesktop;
+$xxlDesktop: $fontsizeDesktop * $rapportDesktop * $rapportDesktop * $rapportDesktop * $rapportDesktop * $rapportDesktop * $rapportDesktop * $rapportDesktop;
 
 button{
   font-size: $fontsizeMobile;

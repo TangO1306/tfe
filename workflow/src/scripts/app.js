@@ -399,7 +399,8 @@ paragraphs.forEach( paragraph => {
     gsap.from(paragraph, {
         scrollTrigger: {
             trigger: paragraph,
-            start: "top 85%"
+            start: "top 85%",
+            markers: true
         },
         duration: 0.6,
         opacity: 0
@@ -456,26 +457,25 @@ pinIntro.from(".hidden span", {
     scrollTrigger: ".hidden span"
 });
 
-pinIntro.fromTo(".hero__hidden" , 
+pinIntro.fromTo(".hero__hidden", 
 { 
     clipPath: "polygon(0 0, 100% 0, 100% 100%, 0 100%)"
 }, 
 {
     scrollTrigger: {
         trigger: ".section--hero",
-        start: "top top",
-        end: "+=100%", 
         scrub: 0.6,
-        pin: true
+        pin: ".section--hero .container",
+        start: "top top",
+        end: "bottom bottom"
     },
     clipPath: "polygon(39% 0, 61% 0, 61% 100%, 39% 100%)"
 })
 
 gsap.to(".hero__bg--fusee", {
     scrollTrigger: {
-        trigger: ".section--hero",
-        scrub: 1.2,
-        pin: true
+        trigger: ".hero__hidden",
+        scrub: 1.2
     },
     scale: 1.2,
     transformOrigin: "30% 0"
@@ -483,19 +483,17 @@ gsap.to(".hero__bg--fusee", {
 
 gsap.to(".hero__bg--rover", {
     scrollTrigger: {
-        trigger: ".section--hero",
-        scrub: 1.2,
-        pin: true
+        trigger: ".hero__hidden",
+        scrub: 1.2
     },
     scale: 1.2,
-    transformOrigin: "135% 0"
+    transformOrigin: "100% 0"
 });
 
 gsap.to(".hero__bg--paysage", {
     scrollTrigger: {
-        trigger: ".section--hero",
-        scrub: 1.2,
-        pin: true
+        trigger: ".hero__hidden",
+        scrub: 1.2
     },
     scale: 1.2,
     transformOrigin: "10% 50%"
