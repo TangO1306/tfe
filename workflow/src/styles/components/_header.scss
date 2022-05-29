@@ -12,7 +12,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin: 24px 96px 0 96px;
+  margin: 24px 24px 0 24px;
 
   a{
     display: flex;
@@ -33,12 +33,12 @@
   background-blend-mode: normal;
   position: fixed;
   top: 0;
-  height: 100vh;
-  width: 100vw;
+  height: 100%;
+  width: 100%;
   overflow: hidden;
   z-index: 11;
   background-color: $black;
-  right: -100vw;
+  right: -100%;
   //transition: right .3s ease-out;
 }
 
@@ -62,7 +62,7 @@
     }
 
     &--lien{
-      font-size: $lgDesktop;
+      font-size: $lgMobile;
       color: $white;
       text-decoration: none;
       text-transform: uppercase;
@@ -93,23 +93,40 @@ body[data-menu]{
     }
 
     .grid{
-      mix-blend-mode: normal;
-      right: 0vw;
-      //transition: right .3s ease-out;
+      right: 0%;
     }
 }
 
 .contenu__hidden{
   overflow: hidden;
-  height: $xxlDesktop;
+  height: $xxlMobile;
   display: flex;
   color: $orange;
   font-weight: 900;
-  font-size: $xxlDesktop;
+  font-size: $xxlMobile;
   line-height: $lineheightTitle;
 }
 
 .contenu__hidden span{
   margin: 0;
   padding: 0;
+}
+
+@media(min-width: 650px){
+  .menu{
+    margin: 24px 48px 0 48px;
+  }
+}
+
+@media(min-width: 1300px){
+  .menu{
+    margin: 24px 96px 0 96px;
+  }
+}
+
+@media(min-width: 1921px){
+  .menu{
+    max-width: 1920px;
+    margin: 0 auto;
+  }
 }

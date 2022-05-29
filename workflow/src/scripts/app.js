@@ -399,8 +399,7 @@ paragraphs.forEach( paragraph => {
     gsap.from(paragraph, {
         scrollTrigger: {
             trigger: paragraph,
-            start: "top 85%",
-            markers: true
+            start: "top 85%"
         },
         duration: 0.6,
         opacity: 0
@@ -437,15 +436,6 @@ masks.forEach( mask => {
         delay: -0.6
     });
 })
-
-/*gsap.set(".hero__bg--fusee, .hero__bg--rover", {clipPath: "polygon(50% 50%, 50% 50%, 50% 50%, 50% 50%)"});
-
-gsap.to(".hero__bg--fusee, .hero__bg--rover", {
-    duration: 1.2,
-    ease: "slow(0.5, 0.7, false)",
-    clipPath: "polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)",
-    transformOrigin: "50% 50%"
-});*/
 
 let pinIntro = gsap.timeline();
 
@@ -500,18 +490,21 @@ gsap.to(".hero__bg--paysage", {
 });
 
 let sections = gsap.utils.toArray(".timeline");
+let wrapper = document.querySelector(".wrapper");
 
-gsap.to(sections, {
-    xPercent: -100 * (sections.length - 1),
-    ease: "none",
-    scrollTrigger: {
-        trigger: ".wrapper",
-        pin: true,
-        scrub: 0.3,
-        start: "top top",
-        end: "+=300%"
-    }
-});
+if(wrapper){
+    gsap.to(wrapper, {
+        x: () => -(wrapper.scrollWidth - document.documentElement.clientWidth) + "px",
+        ease: "none",
+        scrollTrigger: {
+            trigger: wrapper,
+            pin: true,
+            scrub: 0.3,
+            start: "top top",
+            end: () => "+=" + wrapper.offsetWidth
+        }
+    });
+}
 
 const burger = gsap.timeline({paused:true, reversed:true});
 

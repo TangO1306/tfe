@@ -10,29 +10,31 @@ $lineheightTitle: 1;
 $lineheightContent: 1.6;
 $fontsizeImage: 1.4rem;
 
-$rapportMobile: 1.236;
+$rapportHierarchique: 1.236;
+
 $fontsizeMobile: 1.6rem;
-
-$smMobile: $fontsizeMobile * $rapportMobile;
-$mdMobile: $fontsizeMobile * $rapportMobile * $rapportMobile * $rapportMobile;
-$lgMobile: $fontsizeMobile * $rapportMobile * $rapportMobile * $rapportMobile * $rapportMobile * $rapportMobile;
-$xlMobile: $fontsizeMobile * $rapportMobile * $rapportMobile * $rapportMobile * $rapportMobile * $rapportMobile * $rapportMobile * $rapportMobile;
-$xxlMobile: $fontsizeMobile * $rapportMobile * $rapportMobile * $rapportMobile * $rapportMobile * $rapportMobile * $rapportMobile * $rapportMobile * $rapportMobile;
-
-$rapportDesktop: 1.236;
+$fontsizeTablet: 1.7rem;
 $fontsizeDesktop: 1.8rem;
 
-$smDesktop: $fontsizeDesktop * $rapportDesktop;
-$mdDesktop: $fontsizeDesktop * $rapportDesktop * $rapportDesktop * $rapportDesktop;
-$lgDesktop: $fontsizeDesktop * $rapportDesktop * $rapportDesktop * $rapportDesktop * $rapportDesktop * $rapportDesktop;
-$xlDesktop: $fontsizeDesktop * $rapportDesktop * $rapportDesktop * $rapportDesktop * $rapportDesktop * $rapportDesktop * $rapportDesktop;
-$xxlDesktop: $fontsizeDesktop * $rapportDesktop * $rapportDesktop * $rapportDesktop * $rapportDesktop * $rapportDesktop * $rapportDesktop * $rapportDesktop;
+$smMobile: $fontsizeMobile * $rapportHierarchique;
+$mdMobile: $fontsizeMobile * $rapportHierarchique * $rapportHierarchique * $rapportHierarchique;
+$lgMobile: $fontsizeMobile * $rapportHierarchique * $rapportHierarchique * $rapportHierarchique * $rapportHierarchique * $rapportHierarchique;
+$xlMobile: $fontsizeMobile * $rapportHierarchique * $rapportHierarchique * $rapportHierarchique * $rapportHierarchique * $rapportHierarchique * $rapportHierarchique;
+$xxlMobile: $fontsizeMobile * $rapportHierarchique * $rapportHierarchique * $rapportHierarchique * $rapportHierarchique * $rapportHierarchique * $rapportHierarchique * $rapportHierarchique;
 
-button{
-  font-size: $fontsizeMobile;
-}
+$smTablet: $fontsizeTablet * $rapportHierarchique;
+$mdTablet: $fontsizeTablet * $rapportHierarchique * $rapportHierarchique * $rapportHierarchique;
+$lgTablet: $fontsizeTablet * $rapportHierarchique * $rapportHierarchique * $rapportHierarchique * $rapportHierarchique * $rapportHierarchique;
+$xlTablet: $fontsizeTablet * $rapportHierarchique * $rapportHierarchique * $rapportHierarchique * $rapportHierarchique * $rapportHierarchique * $rapportHierarchique;
+$xxlTablet: $fontsizeTablet * $rapportHierarchique * $rapportHierarchique * $rapportHierarchique * $rapportHierarchique * $rapportHierarchique * $rapportHierarchique * $rapportHierarchique;
 
-p{
+$smDesktop: $fontsizeDesktop * $rapportHierarchique;
+$mdDesktop: $fontsizeDesktop * $rapportHierarchique * $rapportHierarchique * $rapportHierarchique;
+$lgDesktop: $fontsizeDesktop * $rapportHierarchique * $rapportHierarchique * $rapportHierarchique * $rapportHierarchique * $rapportHierarchique;
+$xlDesktop: $fontsizeDesktop * $rapportHierarchique * $rapportHierarchique * $rapportHierarchique * $rapportHierarchique * $rapportHierarchique * $rapportHierarchique;
+$xxlDesktop: $fontsizeDesktop * $rapportHierarchique * $rapportHierarchique * $rapportHierarchique * $rapportHierarchique * $rapportHierarchique * $rapportHierarchique * $rapportHierarchique;
+
+body, button{
   font-size: $fontsizeMobile;
 }
 
@@ -52,8 +54,30 @@ p{
   font-size: $xlMobile;
 }
 
-@media(min-width : 767px){
-  p{
+@media(min-width: 650px){
+  body, button{
+    font-size: $fontsizeTablet;
+  }
+
+  .title--small{
+    font-size: $smTablet;
+  }
+
+  .title--medium{
+    font-size: $mdTablet;
+  }
+
+  .title--large{
+    font-size: $lgTablet;
+  }
+
+  .title--extralarge{
+    font-size: $xlTablet;
+  }
+}
+
+@media(min-width: 1300px){
+  body, button{
     font-size: $fontsizeDesktop;
   }
 

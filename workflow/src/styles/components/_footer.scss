@@ -14,6 +14,7 @@
         justify-content: space-between;
         border-top: 2px solid $lightblack;
         font-size: $fontsizeImage;
+        margin: 0;
     }
 
     &__logo{
@@ -41,7 +42,8 @@
 .nav-left{
     &__list{
         display: flex;
-        gap: 48px;
+        flex-direction: column;
+        gap: 24px;
     }
 
     &__element a{
@@ -52,8 +54,36 @@
 .nav-right{
     &__list{
         display: flex;
-        justify-content: flex-end;
-        gap: 48px;
+        justify-content: space-between;
         align-items: center;
+    }
+}
+
+@media (min-width: 650px){
+    .nav-left{
+        &__list{
+            flex-direction: row;
+        }
+    }
+
+    .nav-right{
+        &__list{
+            justify-content: flex-end;
+            gap: 24px;
+        }
+    }
+}
+
+@media (min-width: 1300px){
+    .nav-left{
+        &__list{
+            gap: 48px;
+        }
+    }
+
+    .nav-right{
+        &__list{
+            gap: 48px;
+        }
     }
 }
