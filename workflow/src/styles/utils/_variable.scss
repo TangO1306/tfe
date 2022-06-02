@@ -17,16 +17,16 @@ $fontsizeTablet: 1.7rem;
 $fontsizeDesktop: 1.8rem;
 
 $smMobile: $fontsizeMobile * $rapportHierarchique;
-$mdMobile: $fontsizeMobile * $rapportHierarchique * $rapportHierarchique * $rapportHierarchique;
-$lgMobile: $fontsizeMobile * $rapportHierarchique * $rapportHierarchique * $rapportHierarchique * $rapportHierarchique * $rapportHierarchique;
-$xlMobile: $fontsizeMobile * $rapportHierarchique * $rapportHierarchique * $rapportHierarchique * $rapportHierarchique * $rapportHierarchique * $rapportHierarchique;
-$xxlMobile: $fontsizeMobile * $rapportHierarchique * $rapportHierarchique * $rapportHierarchique * $rapportHierarchique * $rapportHierarchique * $rapportHierarchique * $rapportHierarchique;
+$mdMobile: $fontsizeMobile * $rapportHierarchique * $rapportHierarchique;
+$lgMobile: $fontsizeMobile * $rapportHierarchique * $rapportHierarchique * $rapportHierarchique;
+$xlMobile: $fontsizeMobile * $rapportHierarchique * $rapportHierarchique * $rapportHierarchique * $rapportHierarchique;
+$xxlMobile: $fontsizeMobile * $rapportHierarchique * $rapportHierarchique * $rapportHierarchique * $rapportHierarchique * $rapportHierarchique;
 
 $smTablet: $fontsizeTablet * $rapportHierarchique;
 $mdTablet: $fontsizeTablet * $rapportHierarchique * $rapportHierarchique * $rapportHierarchique;
-$lgTablet: $fontsizeTablet * $rapportHierarchique * $rapportHierarchique * $rapportHierarchique * $rapportHierarchique * $rapportHierarchique;
-$xlTablet: $fontsizeTablet * $rapportHierarchique * $rapportHierarchique * $rapportHierarchique * $rapportHierarchique * $rapportHierarchique * $rapportHierarchique;
-$xxlTablet: $fontsizeTablet * $rapportHierarchique * $rapportHierarchique * $rapportHierarchique * $rapportHierarchique * $rapportHierarchique * $rapportHierarchique * $rapportHierarchique;
+$lgTablet: $fontsizeTablet * $rapportHierarchique * $rapportHierarchique * $rapportHierarchique * $rapportHierarchique;
+$xlTablet: $fontsizeTablet * $rapportHierarchique * $rapportHierarchique * $rapportHierarchique * $rapportHierarchique * $rapportHierarchique;
+$xxlTablet: $fontsizeTablet * $rapportHierarchique * $rapportHierarchique * $rapportHierarchique * $rapportHierarchique * $rapportHierarchique * $rapportHierarchique;
 
 $smDesktop: $fontsizeDesktop * $rapportHierarchique;
 $mdDesktop: $fontsizeDesktop * $rapportHierarchique * $rapportHierarchique * $rapportHierarchique;

@@ -39,7 +39,6 @@
   z-index: 11;
   background-color: $black;
   right: -100%;
-  //transition: right .3s ease-out;
 }
 
 .nav{
@@ -116,11 +115,27 @@ body[data-menu]{
   .menu{
     margin: 24px 48px 0 48px;
   }
+
+  .nav{
+    &__element{
+      &--lien{
+        font-size: $lgTablet;
+      }
+    }
+  }
 }
 
 @media(min-width: 1300px){
   .menu{
     margin: 24px 96px 0 96px;
+  }
+
+  .nav{
+    &__element{
+      &--lien{
+        font-size: $lgDesktop;
+      }
+    }
   }
 }
 
