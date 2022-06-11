@@ -123,6 +123,11 @@ body[data-menu]{
       }
     }
   }
+
+  .contenu__hidden{
+    height: $xxlTablet;
+    font-size: $xxlTablet;
+  }
 }
 
 @media(min-width: 1300px){
@@ -136,6 +141,11 @@ body[data-menu]{
         font-size: $lgDesktop;
       }
     }
+  }
+
+  .contenu__hidden{
+    height: $xxlDesktop;
+    font-size: $xxlDesktop;
   }
 }
 

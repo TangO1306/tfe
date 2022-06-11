@@ -170,14 +170,14 @@ const lecteur = document.querySelector(".audio");
 const audio = document.querySelector(".audio__fichier");
 const titre = document.querySelector(".audio__content .title--small");
 const date = document.querySelector(".date");
-const imgPlay = document.querySelector(".btn--play");
+const imgPlay = document.querySelector(".icon--play");
 
 let isPlaying = false;
 let audioIndex = 0;
 
-const auPrev = document.querySelector(".btn--prev");
-const auPlay = document.querySelector(".btn--play");
-const auNext = document.querySelector(".btn--next");
+const auPrev = document.querySelector(".icon--prev");
+const auPlay = document.querySelector(".icon--play");
+const auNext = document.querySelector(".icon--next");
 
 const playlist = [
     {
@@ -216,14 +216,14 @@ const loadAudio = (playlist) => {
 function play(){
     audio.volume = 0.7;
     isPlaying = true;
-    imgPlay.classList.replace("icon__play", "icon__pause");
+    imgPlay.classList.replace("icon--play", "icon--pause");
     audio.play();
 }
 
 function pause(){
     isPlaying = false;
     audio.pause();
-    imgPlay.classList.replace("icon__pause", "icon__play");
+    imgPlay.classList.replace("icon--pause", "icon--play");
 }
 
 function audioPlay(){
@@ -265,48 +265,82 @@ if(lecteur){
 
 // GSAP
 
-const tl = gsap.timeline();
-tl.set(".img", {
-    x: "-30%",
-    scale: 1.6,
-    opacity: 0
-});
+ScrollTrigger.matchMedia({
 
-tl.fromTo(".img", 
-{
-    y: "85%",
-    rotation: 10,
-    transformOrigin: "50% 50%"
-},
-{
-    y: "70%",
-    rotation: 0,
-    transformOrigin: "0% 50%",
-    ease: "circ.out",
-    opacity: 1,
-    duration: 2.4
-});
+    "(max-width: 1299px)": function() {
+        const tl = gsap.timeline();
+        tl.fromTo(".img", 
+        {
+            rotation: 10,
+            transformOrigin: "50% 50%"
+        },
+        {
+            rotation: 0,
+            transformOrigin: "0% 50%",
+            ease: "circ.out",
+            opacity: 1,
+            duration: 2.4
+        });
+        
+        tl.to(".img", {
+            x: 0,
+            ease: "power1.out",
+            duration: 1.8,
+            delay: -1.2
+        });
+        
+        tl.from(".section--intro .title--extralarge", {
+            opacity: 0,
+            x: "-50%",
+            duration: 1.2
+        });
+    },
+	
+    "(min-width: 1300px)": function() {
+        const tl = gsap.timeline();
+        tl.set(".img", {
+            x: "-30%",
+            scale: 1.6,
+            opacity: 0
+        });
 
-tl.to(".img", {
-    x: "0%",
-    scale: 1,
-    ease: "power2.out",
-    duration: 1.2,
-    delay: 0.6
-});
+        tl.fromTo(".img", 
+        {
+            y: "85%",
+            rotation: 10,
+            transformOrigin: "50% 50%"
+        },
+        {
+            y: "70%",
+            rotation: 0,
+            transformOrigin: "0% 50%",
+            ease: "circ.out",
+            opacity: 1,
+            duration: 2.4
+        });
 
-tl.to(".img", {
-    y: 0,
-    ease: "power1.out",
-    duration: 1.8,
-    delay: -1.2
-});
+        tl.to(".img", {
+            x: "0%",
+            scale: 1,
+            ease: "power2.out",
+            duration: 1.2,
+            delay: 0.6
+        });
 
-tl.from(".section--intro .title--extralarge", {
-    opacity: 0,
-    y: "-50%",
-    duration: 1.2
-})
+        tl.to(".img", {
+            y: 0,
+            ease: "power1.out",
+            duration: 1.8,
+            delay: -1.2
+        });
+
+        tl.from(".section--intro .title--extralarge", {
+            opacity: 0,
+            y: "-50%",
+            duration: 1.2
+        });
+    }
+});
 
 const intro = document.querySelector(".section--intro");
 
@@ -391,7 +425,7 @@ gsap.to(".lune", {
     transformOrigin: "50% 50%"
 });
 
-let paragraphs = document.querySelectorAll('p');
+let paragraphs = document.querySelectorAll('p, .title--medium, .title--small');
 
 let masks = document.querySelectorAll(".image__mask");
 
@@ -489,22 +523,25 @@ gsap.to(".hero__bg--paysage", {
     transformOrigin: "10% 50%"
 });
 
-let sections = gsap.utils.toArray(".timeline");
-let wrapper = document.querySelector(".wrapper");
+ScrollTrigger.matchMedia({
+    "(min-width: 1300px)": function() {
+        let wrapper = document.querySelector(".wrapper");
 
-if(wrapper){
-    gsap.to(wrapper, {
-        x: () => -(wrapper.scrollWidth - document.documentElement.clientWidth) + "px",
-        ease: "none",
-        scrollTrigger: {
-            trigger: wrapper,
-            pin: true,
-            scrub: 0.3,
-            start: "top top",
-            end: () => "+=" + wrapper.offsetWidth
+        if(wrapper){
+            gsap.to(wrapper, {
+                x: () => -(wrapper.scrollWidth - document.documentElement.clientWidth) + "px",
+                ease: "none",
+                scrollTrigger: {
+                    trigger: wrapper,
+                    pin: true,
+                    scrub: 0.3,
+                    start: "top top",
+                    end: () => "+=" + wrapper.offsetWidth
+                }
+            });
         }
-    });
-}
+    }
+});
 
 const burger = gsap.timeline({paused:true, reversed:true});
 

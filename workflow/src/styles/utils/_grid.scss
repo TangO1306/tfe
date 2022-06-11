@@ -9,13 +9,14 @@
 
     &--intro{
         .container{
-            grid-template-rows: 1fr 1fr 4.5fr;
+            grid-template-rows: 96px 1fr;
         }
 
         .title--extralarge{
             text-align: center;
-            grid-column: 3 / 8;
-            grid-row: 3 / 4;
+            align-self: center;
+            grid-column: 1 / 6;
+            grid-row: 2 / 3;
         }
     }
 
@@ -47,12 +48,6 @@
     }
 }
 
-.img{
-    grid-column: 3 / 8;
-    grid-row: 3 / 4;
-    align-self: end;
-}
-
 .hidden{
     &:nth-child(1), &:nth-child(2){
         grid-column: 1 / 6;
@@ -78,6 +73,11 @@
     &:nth-child(4){
         grid-row: 6 / 7;
     }
+}
+
+.img{
+    grid-column: 1 / 6;
+    grid-row: 2 / 3;
 }
 
 .tabs{
@@ -237,6 +237,12 @@
             grid-template-columns: repeat(7, 1fr);
         }
 
+        &--intro{
+            .title--extralarge{
+                grid-column: 2 / 7;
+            }
+        }
+
         &--mars{
             .container{
                 grid-template-rows: auto auto;
@@ -269,6 +275,10 @@
         &:nth-child(3), &:nth-child(4){
             grid-column: 1 / 7;
         }
+    }
+
+    .img{
+        grid-column: 2 / 7;
     }
 
     .card{
@@ -457,6 +467,18 @@
             grid-template-columns: repeat(9, 1fr);
         }
 
+        &--intro{
+            .container{
+                grid-template-rows: 1fr 1fr 4.5fr;
+            }
+
+            .title--extralarge{
+                align-self: start;
+                grid-column: 3 / 8;
+                grid-row: 3 / 4;
+            }
+        }
+
         &--mars{
             .container{
                 grid-template-rows: auto;
@@ -507,6 +529,12 @@
             grid-row: 4 / 5;
         }
     }
+
+    .img{
+    grid-column: 3 / 8;
+    grid-row: 3 / 4;
+    align-self: end;
+}
 
     .test1{
         grid-column: 1 / 3;
